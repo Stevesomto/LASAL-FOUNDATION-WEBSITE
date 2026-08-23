@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Application Portal | LASAL Foundation</title>
+  <meta name="description" content="Submit your scholarship application securely through the Veritas Foundation multi-step portal.">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="shortcut icon" href="/images/LOGO.jpg" type="image/x-icon">
+
+  <style>
+    .wizard-progress {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-xl);
+      position: relative;
+    }
+    .progress-step {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .progress-step.active {
+      color: var(--secondary-color);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Contact / Social Bar -->
+  <div class="header-head" style="background-color: var(--primary-color);color: #ffffff; font-size: 0.85rem; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: var(--spacing-md);">
+        <span>📞 +234 803 400 4001</span>
+        <span>✉️ info@lasalfoundation.org</span>
+      </div>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="get-involved.html" style="color: var(--accent-color); font-weight: 600;">Partner With Us</a>
+        <a href="donate.html" style="color: var(--accent-light); font-weight: 600;">Support Our Cause</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <img src="/images/LASAL FOUNDATION LOGO.png" alt="lasal-foundation-logo">
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="scholarships.html" class="active">Scholarships</a></li>
+          <!-- <li><a href="programs.html">Programs</a></li> -->
+          <li><a href="community.html">Our Community</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="btn donate_btn" style="padding: 0.5rem 1rem; color: white;">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header" style="margin-bottom: var(--spacing-lg);">
+        <h2>Secure Scholarship Application</h2>
+        <p>Complete the 5-step application wizard below. Data is structured for secure REST API transmission.</p>
+      </div>
+
+      <!-- Progress Indicator -->
+      <div class="wizard-progress">
+        <div class="progress-step active">1. Personal</div>
+        <div class="progress-step">2. Education</div>
+        <div class="progress-step">3. Scholarship</div>
+        <div class="progress-step">4. Documents</div>
+        <div class="progress-step">5. Review</div>
+      </div>
+
+      <div class="card" style="padding: var(--spacing-xl);">
+        <form id="scholarship-application-wizard">
+          
+          <!-- STEP 1: Personal Information -->
+          <div class="form-step">
+            <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">Step 1: Personal Information</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md);">
+              <div class="form-group">
+                <label class="form-label" for="fullName">Full Name *</label>
+                <input type="text" id="fullName" class="form-control" required placeholder="Stephen Anyanwu">
+                <span class="form-error">Full name is required.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="dob">Date of Birth *</label>
+                <input type="date" id="dob" class="form-control" required>
+                <span class="form-error">Date of birth is required.</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md);">
+              <div class="form-group">
+                <label class="form-label" for="gender">Gender *</label>
+                <select id="gender" class="form-control" required>
+                  <option value="">Select gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Prefer not to say</option>
+                </select>
+                <span class="form-error">Please select a gender option.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" class="form-control" required placeholder="stephen@example.com">
+                <span class="form-error">Valid email is required.</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md);">
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number *</label>
+                <input type="tel" id="phone" class="form-control" required placeholder="+1 (555) 000-0000">
+                <span class="form-error">Phone number is required.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="address">Residential Address *</label>
+                <input type="text" id="address" class="form-control" required placeholder="123 University Ave">
+                <span class="form-error">Address is required.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Educational Information -->
+          <div class="form-step" style="display: none;">
+            <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">Step 2: Educational Information</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md);">
+              <div class="form-group">
+                <label class="form-label" for="institution">Institution Name *</label>
+                <input type="text" id="institution" class="form-control" required placeholder="University Name">
+                <span class="form-error">Institution name is required.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="course">Course / Major *</label>
+                <input type="text" id="course" class="form-control" required placeholder="Computer Science">
+                <span class="form-error">Course of study is required.</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md);">
+              <div class="form-group">
+                <label class="form-label" for="level">Academic Level *</label>
+                <select id="level" class="form-control" required>
+                  <option value="">Select level</option>
+                  <option value="Undergraduate Year 1">Undergraduate Year 1</option>
+                  <option value="Undergraduate Year 2">Undergraduate Year 2</option>
+                  <option value="Undergraduate Year 3">Undergraduate Year 3</option>
+                  <option value="Undergraduate Final Year">Undergraduate Final Year</option>
+                  <option value="Graduate / Master's">Graduate / Master's</option>
+                </select>
+                <span class="form-error">Please select your academic level.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="studentId">Student ID Number *</label>
+                <input type="text" id="studentId" class="form-control" required placeholder="STU-2026-0098">
+                <span class="form-error">Student ID is required.</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="gpa">GPA / Academic Standing *</label>
+              <input type="text" id="gpa" class="form-control" required placeholder="3.8 / 4.0 GPA">
+              <span class="form-error">GPA or academic standing is required.</span>
+            </div>
+          </div>
+
+          <!-- STEP 3: Scholarship Information -->
+          <div class="form-step" style="display: none;">
+            <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">Step 3: Scholarship & Statements</h3>
+            <div class="form-group">
+              <label class="form-label" for="scholarshipSelected">Select Scholarship Program *</label>
+              <select id="scholarshipSelected" class="form-control" required>
+                <option value="">Select scholarship</option>
+                <option value="STEM Excellence Scholarship">STEM Excellence Scholarship ($5,000)</option>
+                <option value="Women in Technology Grant">Women in Technology Grant ($3,500)</option>
+                <option value="Community Leadership Award">Community Leadership Award ($2,500)</option>
+              </select>
+              <span class="form-error">Please select a scholarship program.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="whyApplying">Why are you applying for this scholarship? *</label>
+              <textarea id="whyApplying" class="form-control" rows="3" required placeholder="Describe your academic motivation..."></textarea>
+              <span class="form-error">This field is required.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="careerGoals">What are your long-term career goals? *</label>
+              <textarea id="careerGoals" class="form-control" rows="3" required placeholder="Describe your professional objectives..."></textarea>
+              <span class="form-error">This field is required.</span>
+            </div>
+          </div>
+
+          <!-- STEP 4: Documents Upload UI -->
+          <div class="form-step" style="display: none;">
+            <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">Step 4: Supporting Documents</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-md);">Please attach the requested verification files (PDF, JPG, PNG).</p>
+            <div class="form-group">
+              <label class="form-label" for="passportPhoto">Passport Photograph *</label>
+              <input type="file" id="passportPhoto" class="form-control" required accept=".jpg,.jpeg,.png">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="studentIdDoc">Valid Student ID Card *</label>
+              <input type="file" id="studentIdDoc" class="form-control" required accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="academicDoc">Academic Transcript / Record *</label>
+              <input type="file" id="academicDoc" class="form-control" required accept=".pdf">
+            </div>
+          </div>
+
+          <!-- STEP 5: Review Information -->
+          <div class="form-step" style="display: none;">
+            <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md);">Step 5: Review Your Application</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-lg);">Please review your information before final submission.</p>
+            <div id="review-summary-content" style="background-color: var(--bg-subtle); padding: var(--spacing-lg); border-radius: var(--radius-md); font-size: 0.95rem; line-height: 1.6;">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <!-- STEP 6: Success Screen -->
+          <div class="form-step" style="display: none; text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎉</div>
+            <h3 style="color: var(--primary-color); font-size: 1.75rem; margin-bottom: var(--spacing-sm);">Application Submitted Successfully!</h3>
+            <p style="color: var(--text-muted); margin-bottom: var(--spacing-lg);">Thank you for applying. Your application has been logged into our evaluation system.</p>
+            <div style="background-color: var(--bg-subtle); padding: var(--spacing-md); border-radius: var(--radius-md); display: inline-block; margin-bottom: var(--spacing-xl);">
+              <strong>Reference Number:</strong> <span id="mock-ref-number" style="color: var(--secondary-color); font-family: monospace; font-size: 1.1rem;">--</span>
+            </div>
+            <div>
+              <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+            </div>
+          </div>
+
+          <!-- Wizard Navigation Controls -->
+          <div style="display: flex; justify-content: space-between; margin-top: var(--spacing-xl); border-top: 1px solid var(--border-color); padding-top: var(--spacing-lg);">
+            <button type="button" id="prev-btn" class="btn btn-outline" style="display: none;">Previous</button>
+            <button type="button" id="next-btn" class="btn btn-primary" style="background-color: var(--secondary-color);">Next Step</button>
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="background-color: var(--secondary-color); display: none;">Submit Application</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <!-- <h3>LASAL Foundation</h3> -->
+          <a href="index.html"><img src="/images/LOGO.jpg" alt="">
+          <!-- <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-md);">
+            Empowering deserving students with world-class scholarships, mentorship, and opportunities to shape a brighter future.
+          </p> -->
+        </a>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="scholarships.html">Scholarship Opportunities</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="community.html">Our Community</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support & Get Involved</h3>
+          <ul>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="get-involved.html">Partner With Us</a></li>
+            <li><a href="get-involved.html">Volunteer</a></li>
+            <li><a href="stories.html">Success Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <!-- <li><a href="contact.html">Send a Message</a></li> -->
+            <li><span>📍 Suite 3, Canaan Plaza,  <br> Plot 2 Block 105 Lekki Phase 1, <br> Lekki Epe Expressway,  
+              <br> Victoria Island, Lagos
+              </span></li>
+            <li><span>📞 +234 803 400 4001</span></li>
+            <li><span>✉️ info@lasalfoundation.org</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LASAL Foundation. All rights reserved. Built by <a href="stephen-somtochukwu.vercel.app">Stephen Somtochukwu</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/application.js"></script>
+</body>
+</html> 

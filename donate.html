@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | LASAL Foundation</title>
+  <meta name="description" content="Support deserving students and fuel future innovators by contributing to the LASAL Foundation.">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="shortcut icon" href="/images/LOGO.jpg" type="image/x-icon">
+
+</head>
+<body>
+
+  <!-- Top Contact / Social Bar -->
+  <div class="header-head" style="background-color: var(--primary-color);color: #ffffff; font-size: 0.85rem; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: var(--spacing-md);">
+        <span>📞 +234 803 400 4001</span>
+        <span>✉️ info@lasalfoundation.org</span>
+      </div>
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="get-involved.html" style="color: var(--accent-color); font-weight: 600;">Partner With Us</a>
+        <a href="donate.html" style="color: var(--accent-light); font-weight: 600;">Support Our Cause</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <img src="/images/LASAL FOUNDATION LOGO.png" alt="lasal-foundation-logo">
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <!-- <li><a href="programs.html">Programs</a></li> -->
+          <li><a href="community.html">Our Community</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="btn donate_btn active" style="padding: 0.5rem 1rem; color: white;">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width: 700px;">
+      <div class="section-header" style="text-align: center; margin-bottom: var(--spacing-xl);">
+        <span class="badge badge-teal" style="margin-bottom: var(--spacing-sm);">Make a Difference</span>
+        <h2>Support Our Scholars</h2>
+        <p>100% of direct donations go towards student scholarships, tuition grants, and educational resources.</p>
+      </div>
+
+      <div class="card" style="padding: var(--spacing-xl);">
+        <form id="donation-form">
+          <div class="form-group" style="margin-bottom: var(--spacing-lg);">
+            <label class="form-label">Select Donation Amount</label>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-sm); margin-top: var(--spacing-xs);">
+              <button type="button" class="btn btn-outline1" style="padding: 0.75rem;">$25</button>
+              <button type="button" class="btn btn-outline1" style="padding: 0.75rem;">$50</button>
+              <button type="button" class="btn btn-primary" style="padding: 0.75rem; background-color: var(--secondary-color);">* $100</button>
+              <button type="button" class="btn btn-outline1" style="padding: 0.75rem;">$500</button>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: var(--spacing-md);">
+            <label class="form-label" for="custom-amount">Or Custom Amount ($ USD)</label>
+            <input type="number" id="custom-amount" class="form-control" placeholder="100.00" min="1">
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+            <div class="form-group">
+              <label class="form-label" for="donor-name">Full Name *</label>
+              <input type="text" id="donor-name" class="form-control" required placeholder="Fullname">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="donor-email">Email Address *</label>
+              <input type="email" id="donor-email" class="form-control" required placeholder="Email address">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: var(--spacing-lg);">
+            <label class="form-label" for="payment-method">Payment Method *</label>
+            <select id="payment-method" class="form-control" required>
+              <option value="card">Credit / Debit Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="bank">Direct Bank Transfer</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-outline complete" style="background-color: var(--primary-color);  width: 100%; padding: 0.85rem; font-size: 1.05rem;">Complete Secure Donation</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <!-- <h3>LASAL Foundation</h3> -->
+          <a href="index.html"><img src="/images/LOGO.jpg" alt="">
+          <!-- <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-md);">
+            Empowering deserving students with world-class scholarships, mentorship, and opportunities to shape a brighter future.
+          </p> -->
+        </a>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="scholarships.html">Scholarship Opportunities</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="community.html">Our Community</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support & Get Involved</h3>
+          <ul>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="get-involved.html">Partner With Us</a></li>
+            <li><a href="get-involved.html">Volunteer</a></li>
+            <li><a href="stories.html">Success Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <!-- <li><a href="contact.html">Send a Message</a></li> -->
+            <li><span>📍 Suite 3, Canaan Plaza,  <br> Plot 2 Block 105 Lekki Phase 1, <br> Lekki Epe Expressway,  
+              <br> Victoria Island, Lagos
+              </span></li>
+            <li><span>📞 +234 803 400 4001</span></li>
+            <li><span>✉️ info@lasalfoundation.org</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LASAL Foundation. All rights reserved. Built by <a href="stephen-somtochukwu.vercel.app">Stephen Somtochukwu</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
