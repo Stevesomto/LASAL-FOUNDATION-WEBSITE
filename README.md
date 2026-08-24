@@ -1,1 +1,7 @@
 # THIS IS A WEBSITE BUILT FOR LASAL FOUNDATION 
+
+# work on the hero section on the home page (LASAL FOUNDATION........mobility)
+
+# Work on the justification of OUR MISSION, VISION AND ABOUT US
+
+# CHECK THE IMAGES ON MEET OUR COMMUNITY -  THEY ARE NOT SHOWING - BROKEN IMAGES 
