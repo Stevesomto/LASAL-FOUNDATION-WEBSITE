@@ -239,6 +239,15 @@ button, input, select, textarea {
     padding-left: 30px
   }
 
+  .container .badge{
+    font-size: 1.1rem;
+    line-height: 25px;
+  }
+
+  .about-us-text{
+    text-align: justify;
+  }
+
  /* nav ul li a.active{
   color: black;
  }  */
