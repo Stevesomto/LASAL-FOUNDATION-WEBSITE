@@ -3,6 +3,20 @@ import { scholarshipsData } from './data/scholarships.js';
 import { storiesData } from './data/stories.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  
+  initHeroSlider();
+
+  renderFeaturedScholarships();
+
+  renderFeaturedStories();
+
+  initNewsletterForm();
+
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
   // Initialize mobile navigation toggle & active path checks
   initNavigation();
   
@@ -69,4 +83,360 @@ function initNewsletterForm() {
     feedback.style.color = 'var(--success-color)';
     emailInput.value = '';
   });
+}
+
+
+
+/* =========================================================
+   HERO IMAGE SLIDER
+   ========================================================= */
+
+function initHeroSlider() {
+
+  const slider = document.querySelector('#heroSlider');
+
+  if (!slider) {
+    console.log('Hero slider not found');
+    return;
+  }
+
+
+  const slides = slider.querySelectorAll('.hero-slide');
+
+  const prevButton = slider.querySelector('#heroPrev');
+
+  const nextButton = slider.querySelector('#heroNext');
+
+  const dots = slider.querySelectorAll('.hero-dot');
+
+
+  if (slides.length === 0) {
+    console.log('No hero slides found');
+    return;
+  }
+
+
+  console.log('Hero slider initialized');
+  console.log('Number of slides:', slides.length);
+
+
+  let currentSlide = 0;
+
+  let autoSlideTimer = null;
+
+
+  /* =========================================================
+     SHOW SLIDE
+     ========================================================= */
+
+  function showSlide(index) {
+
+    /*
+     * Make sure the index always stays between
+     * 0 and the number of slides - 1
+     */
+
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    if (index < 0) {
+      index = slides.length - 1;
+    }
+
+
+    currentSlide = index;
+
+
+    /*
+     * Remove active class from all slides
+     */
+
+    slides.forEach((slide) => {
+
+      slide.classList.remove('active');
+
+    });
+
+
+    /*
+     * Remove active class from all dots
+     */
+
+    dots.forEach((dot) => {
+
+      dot.classList.remove('active');
+
+    });
+
+
+    /*
+     * Add active class to current slide
+     */
+
+    slides[currentSlide].classList.add('active');
+
+
+    /*
+     * Add active class to current dot
+     */
+
+    if (dots[currentSlide]) {
+
+      dots[currentSlide].classList.add('active');
+
+    }
+
+  }
+
+
+  /* =========================================================
+     NEXT SLIDE
+     ========================================================= */
+
+  function nextSlide() {
+
+    showSlide(currentSlide + 1);
+
+  }
+
+
+  /* =========================================================
+     PREVIOUS SLIDE
+     ========================================================= */
+
+  function previousSlide() {
+
+    showSlide(currentSlide - 1);
+
+  }
+
+
+  /* =========================================================
+     START AUTOMATIC SLIDER
+     ========================================================= */
+
+  function startAutoSlide() {
+
+    stopAutoSlide();
+
+
+    autoSlideTimer = setInterval(() => {
+
+      nextSlide();
+
+    }, 5000);
+
+  }
+
+
+  /* =========================================================
+     STOP AUTOMATIC SLIDER
+     ========================================================= */
+
+  function stopAutoSlide() {
+
+    if (autoSlideTimer !== null) {
+
+      clearInterval(autoSlideTimer);
+
+      autoSlideTimer = null;
+
+    }
+
+  }
+
+
+  /* =========================================================
+     RESET AUTOMATIC SLIDER
+     ========================================================= */
+
+  function resetAutoSlide() {
+
+    stopAutoSlide();
+
+    startAutoSlide();
+
+  }
+
+
+  /* =========================================================
+     NEXT BUTTON
+     ========================================================= */
+
+  if (nextButton) {
+
+    nextButton.addEventListener('click', function (event) {
+
+      event.preventDefault();
+
+      console.log('Next button clicked');
+
+      nextSlide();
+
+      resetAutoSlide();
+
+    });
+
+  } else {
+
+    console.log('Next button not found');
+
+  }
+
+
+  /* =========================================================
+     PREVIOUS BUTTON
+     ========================================================= */
+
+  if (prevButton) {
+
+    prevButton.addEventListener('click', function (event) {
+
+      event.preventDefault();
+
+      console.log('Previous button clicked');
+
+      previousSlide();
+
+      resetAutoSlide();
+
+    });
+
+  } else {
+
+    console.log('Previous button not found');
+
+  }
+
+
+  /* =========================================================
+     DOT BUTTONS
+     ========================================================= */
+
+  dots.forEach((dot, index) => {
+
+    dot.addEventListener('click', function (event) {
+
+      event.preventDefault();
+
+      console.log('Dot clicked:', index);
+
+      showSlide(index);
+
+      resetAutoSlide();
+
+    });
+
+  });
+
+
+  /* =========================================================
+     PAUSE WHEN MOUSE ENTERS
+     ========================================================= */
+
+  slider.addEventListener('mouseenter', function () {
+
+    stopAutoSlide();
+
+  });
+
+
+  /* =========================================================
+     RESUME WHEN MOUSE LEAVES
+     ========================================================= */
+
+  slider.addEventListener('mouseleave', function () {
+
+    startAutoSlide();
+
+  });
+
+
+  /* =========================================================
+     KEYBOARD CONTROL
+     ========================================================= */
+
+  document.addEventListener('keydown', function (event) {
+
+    if (event.key === 'ArrowRight') {
+
+      nextSlide();
+
+      resetAutoSlide();
+
+    }
+
+
+    if (event.key === 'ArrowLeft') {
+
+      previousSlide();
+
+      resetAutoSlide();
+
+    }
+
+  });
+
+
+  /* =========================================================
+     MOBILE SWIPE
+     ========================================================= */
+
+  let touchStartX = 0;
+
+  let touchEndX = 0;
+
+
+  slider.addEventListener('touchstart', function (event) {
+
+    touchStartX = event.changedTouches[0].screenX;
+
+  }, { passive: true });
+
+
+  slider.addEventListener('touchend', function (event) {
+
+    touchEndX = event.changedTouches[0].screenX;
+
+    const swipeDistance =
+      touchEndX - touchStartX;
+
+
+    /*
+     * Swipe left
+     */
+
+    if (swipeDistance < -50) {
+
+      nextSlide();
+
+      resetAutoSlide();
+
+    }
+
+
+    /*
+     * Swipe right
+     */
+
+    if (swipeDistance > 50) {
+
+      previousSlide();
+
+      resetAutoSlide();
+
+    }
+
+  }, { passive: true });
+
+
+  /* =========================================================
+     INITIALIZE FIRST SLIDE
+     ========================================================= */
+
+  showSlide(0);
+
+  startAutoSlide();
+
 }
