@@ -2,7 +2,7 @@ export const scholarsData = [
     {
       id: "sch-001",
       name: "Amina Bello",
-      image: "images/scholar1.jpg",
+      image: "images/scholar2.jpg",
       program: "Computer Science",
       institution: "Federal University of Technology",
       level: "Junior (300 Level)",
@@ -14,7 +14,7 @@ export const scholarsData = [
     {
       id: "sch-002",
       name: "Liam O'Connor",
-      image: "images/scholar2.jpg",      
+      image: "images/scholar1.jpg",      
       program: "Electrical Engineering",
       institution: "Dublin Institute of Technology",
       level: "Senior (Final Year)",

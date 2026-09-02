@@ -2,7 +2,7 @@ export const alumniData = [
     {
       id: "alum-101",
       name: "Dr. Chidi Okonkwo",
-      image: "images/story1.jpg",
+      image: "images/story3.jpg",
       course: "Biomedical Engineering",
       institution: "Imperial College London",
       graduationYear: 2022,
@@ -14,7 +14,7 @@ export const alumniData = [
     {
       id: "alum-102",
       name: "Elena Rostova",
-      image: "images/story3.jpg",
+      image: "images/story1.jpg",
       course: "Software Engineering",
       institution: "University of Toronto",
       graduationYear: 2023,
