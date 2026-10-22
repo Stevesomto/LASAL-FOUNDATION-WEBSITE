@@ -1,92 +1,116 @@
 # LASAL Foundation Website
 
-Static multi-page site for the **Lateef Ajibade Salami (LASAL) Foundation** — scholarships, community, impact, donations, and student stories. Built for hosting on XAMPP, Apache, or any static file server.
+Static multi-page site for the **Lateef Ajibade Salami (LASAL) Foundation** — scholarships, community, impact, donations, and student stories. Built for XAMPP, Apache, GitHub Pages, or any static host.
 
-## SEO
-
-Each public page includes unique **title**, **description**, **keywords**, **canonical URL**, **Open Graph**, and **Twitter** meta tags. The homepage also has **JSON-LD** (`NGO` schema).
-
-- `robots.txt` and `sitemap.xml` live at the site root (update `https://lasalfoundation.org` if the domain differs).
-- After Google Search Console setup, uncomment and set `google-site-verification` in any page `<head>`.
-- Re-run `python scripts/apply-seo.py` after editing SEO copy in that script.
-- `scholarship-details.html` and `story-details.html` update social meta in JavaScript when content loads.
+**Repository:** [github.com/Stevesomto/LASAL-FOUNDATION-WEBSITE](https://github.com/Stevesomto/LASAL-FOUNDATION-WEBSITE)
 
 ## Quick start
 
-1. Place the project under your web root (e.g. `xampp/htdocs/lasal_foundation`).
-2. Ensure the `images/` folder is present with logos and hero/community photos.
-3. Open `http://localhost/lasal_foundation/` (adjust path to match your setup).
-4. Use **ES modules** — serve over HTTP (not `file://`).
+1. Clone or copy the project into your web root (e.g. `xampp/htdocs/lasal_foundation`).
+2. Keep the `images/` folder with logos, hero photos, deck art, and leadership portraits.
+3. Open `http://localhost/lasal_foundation/` (adjust the path to your setup).
+4. Use **ES modules** — serve over HTTP (`http://`), not `file://`.
 
 ## Configuration (`js/config/site-config.js`)
 
 | Setting | Purpose |
 |--------|---------|
-| `WHATSAPP_NUMBER` | Business WhatsApp in international format (no `+`). Default: `2348135529645` (0813 552 9645). |
-| `CONTACT_PHONES_DISPLAY` | Header/footer phone text. |
-| `SOCIAL_URLS` | Facebook, X/Twitter, etc. |
-| `DONATION_BANK` | Ecobank & Stanbic account numbers for the Donate page. |
-| `DONATION_BANK` | Bank name, account name, and account number shown on the Donate page for transfers. **Update with the client’s live account details.** |
-| `PAYSTACK_PUBLIC_KEY` | Optional Paystack public key for card donations on the Donate page. Leave empty to route card/PayPal intents through WhatsApp. |
+| `WHATSAPP_NUMBER` | WhatsApp in international format without `+` (default `2348135529645`). |
+| `CONTACT_PHONES_DISPLAY` | Phones shown in header/footer (`0813 552 9645 · 0802 778 0305`). |
+| `SOCIAL_URLS` | Facebook, Instagram, X. YouTube is commented out until a channel exists. |
+| `DONATION_BANK` | Ecobank & Stanbic IBTC account numbers for bank transfer on Donate. |
+| `DONATION_USD_TO_NGN` | Estimated rate for USD ↔ Naira hints on the Donate page (update as needed). |
+
+Card/PayPal/Paystack paths are **commented out** in `donate.html` and `js/forms.js`; donations are **bank transfer + WhatsApp** only for now.
 
 ## Pages
 
 | File | Description |
 |------|-------------|
-| `index.html` | Home with **hero slider**, stats, featured scholarships & stories |
-| `about.html` | Mission, vision, values, leadership |
-| `scholarships.html` / `scholarship-details.html` | Grant listings and detail + quick apply |
-| `apply.html` | 5-step scholarship application wizard |
-| `community.html` | Scholars & alumni grid with filters |
-| `stories.html` | Written success stories |
-| `stories.html` | **Stories, photos & video** (`js/data/stories.js`, `js/data/scholar-videos.js`, `js/stories-page.js`) |
-| `student-media.html` | Redirects to `stories.html#photos-videos` |
-| `story-details.html` | Full text for homepage featured stories |
-| `impact.html` / `get-involved.html` / `contact.html` / `donate.html` | Impact, involvement, contact, donations |
+| `index.html` | Home: preloader, hero slider, impact stats (count-up), featured scholarships & stories |
+| `about.html` | Mission, founder, beneficiaries, cycle of hope, leadership |
+| `scholarships.html` / `scholarship-details.html` | Listings, filters, detail + quick apply |
+| `apply.html` | Multi-step scholarship application wizard |
+| `community.html` | Scholars & alumni grid with search/filters |
+| `stories.html` | Alumni reviews, success stories, **video stories**, photo highlights |
+| `story-details.html` | Full story text (`?id=` from `js/data/stories.js`) |
+| `student-media.html` | Redirect to `stories.html#photos-videos` |
+| `impact.html` | Impact metrics and deck content |
+| `get-involved.html` | Partnerships, summit, volunteering |
+| `contact.html` | Contact form → WhatsApp |
+| `donate.html` | Bank details, amount presets, USD/NGN custom amount → WhatsApp |
 
-`index2.html` is legacy — not used for production.
+`index2.html` is legacy — not linked in navigation.
 
-## JavaScript structure
+## JavaScript
 
-- `js/main.js` — Navigation, hero slider, homepage grids, newsletter, shared form init
-- `js/forms.js` — Contact (WhatsApp), donation, scholarship quick-form handlers
-- `js/data/*.js` — Scholarships, stories, scholars, alumni, media stories
-- Page-specific: `scholarships.js`, `community.js`, `application.js`, `media-stories.js`, `story-details.js`
+| Module | Role |
+|--------|------|
+| `js/main.js` | Bootstraps site: theme, motion, nav, hero, homepage grids, forms |
+| `js/config/site-config.js` | Phones, social, bank, donation FX rate |
+| `js/navigation.js` | Mobile menu, scroll lock, legacy nav cleanup |
+| `js/theme-init.js` / `js/theme.js` | Light/dark mode (saved in `localStorage`) |
+| `js/motion.js` | Preloader (home), scroll reveal |
+| `js/interactive.js` | Count-up stats, back-to-top, header on scroll, smooth `#` links |
+| `js/forms.js` | Contact, donate, scholarship quick-form → WhatsApp |
+| `js/site-contact.js` | Applies config phones/social URLs to static HTML |
+| `js/whatsapp.js` | Opens WhatsApp with pre-filled messages |
+| `js/stories-page.js` | Loads video/photo grids on Stories |
+| `js/media-stories.js` | Renders photos + YouTube click-to-play facades |
+| `js/story-details.js` | Story detail page content |
+| `js/data/stories.js` | Written stories & alumni reviews |
+| `js/data/scholar-videos.js` | YouTube IDs for Stories video section |
+| `js/data/media-stories.js` | Photo highlight cards |
+| `js/data/scholarships.js`, `scholars.js`, `alumni.js` | Scholarships & community |
+| Page scripts | `scholarships.js`, `community.js`, `application.js` |
 
-Application reference IDs use the **`LAS-`** prefix (e.g. `LAS-APP-123456`).
+Application references use the **`LAS-`** / **`LAS-APP-`** prefix.
 
-## Adding student photos & videos
+## Stories, photos & videos
 
-Edit `js/data/media-stories.js`:
+- **Nav:** single **Stories** item (no separate Photos & Videos menu).
+- **Videos:** edit `js/data/scholar-videos.js` (`videoId`, `title`, `format: 'short'`).
+- **Photos:** edit `js/data/media-stories.js` (`image`, `text`, optional `storyId`).
+- **Long-form text:** edit `js/data/stories.js` and link with `story-details.html?id=...`.
 
-- Set `image` to a path under `images/`.
-- For video, set `videoUrl` to an embed URL (e.g. YouTube `https://www.youtube.com/embed/VIDEO_ID`).
-- Leave `videoUrl` empty for photo + text only entries.
+For fewer personal-channel names before play, prefer a **LASAL-owned YouTube channel** or self-hosted MP4 later.
 
 ## Donations
 
-- **Bank transfer:** User selects “Direct Bank Transfer” — account details appear; submit opens WhatsApp to notify the foundation.
-- **Card / PayPal:** Opens WhatsApp with donation details until Paystack is configured.
-- **Paystack:** Add `PAYSTACK_PUBLIC_KEY` in `site-config.js`; card option uses Paystack Inline JS.
+1. User picks or enters amount (USD or Naira with estimated equivalent).
+2. **Direct Bank Transfer** only — details from `DONATION_BANK` in config and on the page.
+3. Submit opens **WhatsApp** so the donor can confirm after transfer.
 
-## Contact
+To re-enable card/Paystack: uncomment blocks in `donate.html`, `js/forms.js`, and `PAYSTACK_PUBLIC_KEY` in `site-config.js`.
 
-The contact form validates input and opens WhatsApp to `WHATSAPP_NUMBER` with a pre-filled message. No server-side mailer is required.
+## SEO
 
-## Assets & logos
+- Per-page title, description, canonical, Open Graph, and Twitter tags.
+- `robots.txt` and `sitemap.xml` at site root (canonical host `https://lasalfoundation.org`).
+- Homepage JSON-LD (`NGO` schema).
+- Regenerate meta from script: `python scripts/apply-seo.py` (uses UTF-8; fix encoding if a page fails to parse).
 
-Keep `images/` in deploys (hero `IMAGE1–5.jpg`, logos, scholar/story photos).
+Optional: add `google-site-verification` in HTML after Search Console setup.
 
-**Logo paths use relative URLs** (`images/lasal-foundation-logo.png`, `images/LOGO.jpg`) so the site works under a subfolder such as `http://localhost/lasal_foundation/`. Avoid leading `/images/` in HTML except in full `https://lasalfoundation.org/...` social meta tags.
+## Assets
 
-Header logo file: `images/lasal-foundation-logo.png` (copy of `LASAL FOUNDATION LOGO.png` without spaces in the filename).
+- **Logos:** `images/lasal-foundation-logo.png`, `images/LOGO.jpg` — use **relative** paths so subfolder hosting works.
+- **Deck images:** `images/deck/` (challenge, cycle of hope, impact, etc.).
+- **Leadership:** `images/leadership/`.
+- **Hero / community:** `images/IMAGE*.jpg`, scholar photos as referenced in data files.
 
 ## Client reference
 
-Strategy deck (success stories, fields of study, 2026–2029 vision): `docs/LASAL_Foundation_Strategy_Presentation_updated_v2.pdf`. Alumni narratives from that deck are used on **Photos & Videos** (`js/data/media-stories.js`).
+Strategy deck: `docs/LASAL_Foundation_Strategy_Presentation_updated_v2.pdf`. Narrative and impact copy on About, Impact, and Stories align with that deck.
 
-Update **`DONATION_BANK`** in `js/config/site-config.js` with the foundation’s official account when the client provides it (not the unrelated microfinance PDF if that was attached by mistake).
+## Deploy checklist
+
+- [ ] Update `DONATION_BANK` and `DONATION_USD_TO_NGN` if client rates/accounts change  
+- [ ] Confirm `WHATSAPP_NUMBER` and `CONTACT_PHONES_DISPLAY`  
+- [ ] Upload full `images/` tree  
+- [ ] Point domain to site root; test `sitemap.xml` and HTTPS  
+- [ ] Hard refresh after deploy (Ctrl+F5)
 
 ## Credits
 
-© LASAL Foundation. Site built by [Stephen Somtochukwu](https://stephen-somtochukwu.vercel.app).
+© LASAL Foundation. Built by [Stephen Somtochukwu](https://stephen-somtochukwu.vercel.app).
