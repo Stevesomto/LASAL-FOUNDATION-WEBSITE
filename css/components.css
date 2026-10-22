@@ -340,8 +340,14 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 80px;
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    justify-content: space-around;
+  }
 }
 
 .brand-logo {
@@ -1321,10 +1327,18 @@
 
 .challenge-section {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url('../images/deck/challenge.jpg') center / cover no-repeat;
-  color: var(--text-light);
+  overflow-x: clip;
+  background-color: #0f172a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url('../images/deck/challenge.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: var(--spacing-xxl) 0;
+}
+
+.challenge-section .container {
+  max-width: 100%;
 }
 
 .challenge-section h2 {
@@ -1334,44 +1348,58 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
+/* White card — always dark text (never inherit section/body light theme colors) */
 .challenge-highlight-box {
-  background: #ffffff;
+  width: 100%;
+  max-width: 920px;
+  box-sizing: border-box;
+  background-color: #ffffff;
   color: #1e293b;
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
   border-left: 5px solid var(--primary-color);
-  max-width: 920px;
   box-shadow: var(--shadow-md);
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
 }
 
 .challenge-highlight-box p {
   line-height: 1.7;
   margin-bottom: var(--spacing-sm);
   color: #334155;
+  -webkit-text-fill-color: #334155;
 }
 
 .challenge-highlight-box p strong {
   color: #0f172a;
+  -webkit-text-fill-color: #0f172a;
 }
 
 .challenge-highlight-box p:last-child {
   margin-bottom: 0;
   font-weight: 700;
   color: var(--primary-color);
+  -webkit-text-fill-color: var(--primary-color);
 }
 
-/* Dark mode: keep readable dark text on the white card (not --text-main) */
-html[data-theme="dark"] .challenge-highlight-box,
+html[data-theme="dark"] .challenge-highlight-box {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
 html[data-theme="dark"] .challenge-highlight-box p {
   color: #334155;
+  -webkit-text-fill-color: #334155;
 }
 
 html[data-theme="dark"] .challenge-highlight-box p strong {
   color: #0f172a;
+  -webkit-text-fill-color: #0f172a;
 }
 
 html[data-theme="dark"] .challenge-highlight-box p:last-child {
   color: var(--primary-color);
+  -webkit-text-fill-color: var(--primary-color);
 }
 
 .split-deck-grid {

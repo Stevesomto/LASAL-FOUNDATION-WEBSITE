@@ -189,17 +189,26 @@ body.mobile-nav-open {
     z-index: 1002;
   }
 
-  .navbar {
+  .site-header .container.navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     padding: var(--spacing-sm) 0;
     min-height: 72px;
   }
 
+  /* Menu panel is position:fixed — keep <nav> out of the flex row so the logo stays left */
   .navbar nav {
-    position: static;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .navbar .nav-links.active {
+    pointer-events: auto;
   }
 
   /* Hidden until .active — fixed panel scrolls independently of the page */
@@ -316,8 +325,10 @@ body.mobile-nav-open {
     display: none;
   }
 
-  .brand-logo{
-    padding: 10px 20px;
+  .site-header .brand-logo {
+    margin-right: auto;
+    padding: 10px 0;
+    max-width: min(220px, 58vw);
   }
 
   .about_section{
