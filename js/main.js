@@ -1,29 +1,24 @@
 import { initNavigation } from './navigation.js';
+import { initThemeToggle } from './theme.js';
+import { initSiteForms } from './forms.js';
+import { initSiteContact } from './site-contact.js';
+import { initMotion, refreshScrollReveal } from './motion.js';
+import { initInteractive } from './interactive.js';
 import { scholarshipsData } from './data/scholarships.js';
 import { storiesData } from './data/stories.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  
-  initHeroSlider();
-
-  renderFeaturedScholarships();
-
-  renderFeaturedStories();
-
-  initNewsletterForm();
-
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize mobile navigation toggle & active path checks
+  initThemeToggle();
+  initMotion();
   initNavigation();
-  
-  // Render dynamic page content if containers exist
+  initHeroSlider();
   renderFeaturedScholarships();
   renderFeaturedStories();
+  refreshScrollReveal();
   initNewsletterForm();
+  initSiteForms();
+  initSiteContact();
+  initInteractive();
 });
 
 function renderFeaturedScholarships() {
@@ -49,12 +44,13 @@ function renderFeaturedStories() {
   const container = document.getElementById('featured-stories-grid');
   if (!container) return;
 
-  container.innerHTML = storiesData.map(story => `
+  container.innerHTML = storiesData.map((story) => `
     <div class="card story-card">
-      <img src="${story.image}" alt="${story.title}" style="height: 200px; width: 100%; object-fit: cover;">
+      <img src="${story.image}" alt="${story.author || story.title}" style="height: 200px; width: 100%; object-fit: cover; object-position: ${story.imagePosition || 'center top'};">
       <div class="card-body">
         <span class="badge" style="margin-bottom: var(--spacing-xs);">${story.category}</span>
-        <h3 style="font-size: 1.15rem; margin-bottom: var(--spacing-sm); color: var(--primary-color);">${story.title}</h3>
+        <h3 style="font-size: 1.15rem; margin-bottom: var(--spacing-sm); color: var(--primary-color);">${story.author || story.title}</h3>
+        ${story.author ? `<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: var(--spacing-sm);">${story.title}</p>` : ''}
         <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-md);">${story.excerpt}</p>
         <a href="story-details.html?id=${story.id}" style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem;">Read Full Story &rarr;</a>
       </div>
@@ -95,10 +91,7 @@ function initHeroSlider() {
 
   const slider = document.querySelector('#heroSlider');
 
-  if (!slider) {
-    console.log('Hero slider not found');
-    return;
-  }
+  if (!slider) return;
 
 
   const slides = slider.querySelectorAll('.hero-slide');
@@ -110,15 +103,7 @@ function initHeroSlider() {
   const dots = slider.querySelectorAll('.hero-dot');
 
 
-  if (slides.length === 0) {
-    console.log('No hero slides found');
-    return;
-  }
-
-
-  console.log('Hero slider initialized');
-  console.log('Number of slides:', slides.length);
-
+  if (slides.length === 0) return;
 
   let currentSlide = 0;
 
@@ -270,17 +255,11 @@ function initHeroSlider() {
 
       event.preventDefault();
 
-      console.log('Next button clicked');
-
       nextSlide();
 
       resetAutoSlide();
 
     });
-
-  } else {
-
-    console.log('Next button not found');
 
   }
 
@@ -295,17 +274,11 @@ function initHeroSlider() {
 
       event.preventDefault();
 
-      console.log('Previous button clicked');
-
       previousSlide();
 
       resetAutoSlide();
 
     });
-
-  } else {
-
-    console.log('Previous button not found');
 
   }
 
@@ -319,8 +292,6 @@ function initHeroSlider() {
     dot.addEventListener('click', function (event) {
 
       event.preventDefault();
-
-      console.log('Dot clicked:', index);
 
       showSlide(index);
 
@@ -351,6 +322,9 @@ function initHeroSlider() {
     startAutoSlide();
 
   });
+
+  slider.addEventListener('focusin', stopAutoSlide);
+  slider.addEventListener('focusout', startAutoSlide);
 
 
   /* =========================================================

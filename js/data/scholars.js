@@ -20,7 +20,7 @@ export const scholarsData = [
       level: "Senior (Final Year)",
       location: "Dublin, Ireland",
       scholarship: "Women in Technology Grant",
-      quote: "Veritas gave me the runway to focus on renewable energy hardware without financial stress.",
+      quote: "LASAL gave me the runway to focus on renewable energy hardware without financial stress.",
       status: "current"
     },
     {

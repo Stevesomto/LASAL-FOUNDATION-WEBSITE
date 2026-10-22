@@ -1,3 +1,5 @@
+import { openWhatsApp } from './whatsapp.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('scholarship-application-wizard');
     if (!form) return;
@@ -169,8 +171,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
         currentStep++;
         updateWizard();
-        const refNumber = 'VER-APP-' + Math.floor(100000 + Math.random() * 900000);
+        const refNumber = 'LAS-APP-' + Math.floor(100000 + Math.random() * 900000);
         document.getElementById('mock-ref-number').textContent = refNumber;
+
+        const waBody = [
+          '*LASAL Foundation – Scholarship Application*',
+          '',
+          `*Reference:* ${refNumber}`,
+          `*Name:* ${applicationData.personalInfo.fullName}`,
+          `*Email:* ${applicationData.personalInfo.email}`,
+          `*Phone:* ${applicationData.personalInfo.phone}`,
+          `*Institution:* ${applicationData.educationalInfo.institution}`,
+          `*Course:* ${applicationData.educationalInfo.course}`,
+          `*Scholarship:* ${applicationData.scholarshipInfo.scholarshipSelected}`,
+        ].join('\n');
+        openWhatsApp(waBody);
       }, 1200);
     });
   

@@ -1,4 +1,7 @@
 import { scholarshipsData } from './data/scholarships.js';
+import { bindScholarshipApplicationForm } from './forms.js';
+import { refreshScrollReveal } from './motion.js';
+import { updatePageMeta } from './seo-utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const isDetailsPage = window.location.pathname.includes('scholarship-details.html');
@@ -9,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderScholarshipsList();
     initFilters();
   }
+  refreshScrollReveal();
 });
 
 function renderScholarshipsList(filter = 'All') {
@@ -47,14 +51,17 @@ function initFilters() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      filterButtons.forEach(b => b.classList.remove('btn-primary', 'active'));
-      filterButtons.forEach(b => b.classList.add('btn-outline'));
-      
-      e.target.classList.remove('btn-outline');
+      filterButtons.forEach((b) => {
+        b.classList.remove('btn-primary', 'active', 'btn-outline');
+        b.classList.add('btn-outline1');
+      });
+
+      e.target.classList.remove('btn-outline1', 'btn-outline');
       e.target.classList.add('btn-primary', 'active');
       
       const filter = e.target.getAttribute('data-filter');
       renderScholarshipsList(filter);
+      refreshScrollReveal();
     });
   });
 }
@@ -66,6 +73,12 @@ function renderScholarshipDetails() {
 
   const container = document.getElementById('scholarship-detail-container');
   if (!container) return;
+
+  updatePageMeta({
+    title: `${scholarship.title} | LASAL Foundation`,
+    description: scholarship.description,
+    path: `/scholarship-details.html?id=${encodeURIComponent(scholarship.id)}`,
+  });
 
   container.innerHTML = `
     <div>
@@ -124,16 +137,5 @@ function renderScholarshipDetails() {
     </div>
   `;
 
-  // Form submission interaction handler
-  const form = document.getElementById('scholarship-application-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const feedback = document.getElementById('form-feedback');
-      feedback.textContent = 'Application submitted successfully! Your submission ID is VER-' + Math.floor(100000 + Math.random() * 900000) + '. Status tracking will be available upon backend activation.';
-      feedback.style.color = 'var(--success-color)';
-      form.reset();
-    });
-  }
+  bindScholarshipApplicationForm();
 }
-// This frontend is pre-configured to interface with a secure REST API upon backend integration

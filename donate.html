@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate | LASAL Foundation</title>
-  <meta name="description" content="Submit your scholarship application securely through the LASAL Foundation multi-step portal.">
-  <meta name="author" content="LASAL FOUNDATION">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="Scholarship, Grants, Mentorship">
-  <!-- <meta name="google-site-verification" content="2Rv-AigX5B-Hkeu4XIWYLuFXAFe9b2F8NTyJj4jk-bo"> -->
-  <link rel="canonical" href="https://lasalfoundation.org>  <!-- CHANGE THIS BEFORE HOSTING IT DEPENDS ON THE PURCHASED DOMAIN NAME -->
+      <title>Donate | LASAL Foundation</title>
 
-  
-  <!-- Open Graph / Social Sharing -->
+  <meta name="description" content="Support LASAL Foundation scholars with a secure donation. Bank transfer or card—100% directed to education and student support.">
+  <meta name="keywords" content="donate LASAL, scholarship donation Nigeria, support students, charity giving">
+  <meta name="author" content="LASAL Foundation">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#DF7434">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Optional: <meta name="google-site-verification" content="YOUR_CODE"> -->
+  <link rel="canonical" href="https://lasalfoundation.org/donate.html">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="LASAL FOUNDATION">
-  <meta property="og:description" content="LASAL FOUNDATION WEBSITE.">
-  <meta property="og:url" content="https://lasalfoundation.org/">
+  <meta property="og:locale" content="en_NG">
+  <meta property="og:site_name" content="LASAL Foundation">
+  <meta property="og:title" content="Donate | LASAL Foundation">
+  <meta property="og:description" content="Support LASAL Foundation scholars with a secure donation. Bank transfer or card—100% directed to education and student support.">
+  <meta property="og:url" content="https://lasalfoundation.org/donate.html">
   <meta property="og:image" content="https://lasalfoundation.org/images/LOGO.jpg">
-  <meta property="og:site_name" content="LASAL FOUNDATION">
+  <meta property="og:image:alt" content="LASAL Foundation logo">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LASAL FOUNDATION">
-  <meta name="twitter:description" content="LASAL FOUNDATION WEBSITE.">
+  <meta name="twitter:title" content="Donate | LASAL Foundation">
+  <meta name="twitter:description" content="Support LASAL Foundation scholars with a secure donation. Bank transfer or card—100% directed to education and student support.">
   <meta name="twitter:image" content="https://lasalfoundation.org/images/LOGO.jpg">
   
   <!--STYLESHEETS-->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="shortcut icon" href="/images/LOGO.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="images/LOGO.jpg" type="image/x-icon">
 
+  <script src="js/theme-init.js"></script>
 </head>
 <body>
 
@@ -39,25 +44,21 @@
   <div class="header-head" style="background-color: var(--primary-color);color: #ffffff; font-size: 0.85rem; padding: 0.5rem 0;">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
       <div style="display: flex; gap: var(--spacing-md);">
-        <span>📞 +234 803 400 4001</span>
+        <span>📞 0813 552 9645 · 0802 778 0305</span>
         <span>✉️ info@lasalfoundation.org</span>
       </div>
 
 
       <div class="social-media">
-        <a href="#" aria-label="Facebook">
+        <a href="https://www.facebook.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
       
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
         </a>
-      
-        <a href="#" aria-label="YouTube">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
-      
-        <a href="#" aria-label="X">
+
+        <a href="https://x.com/lasalfoundation" target="_blank" rel="noopener noreferrer" aria-label="X">
             <i class="fa-brands fa-x-twitter"></i>
         </a>
       </div>
@@ -74,7 +75,7 @@
   <header class="site-header">
     <div class="container navbar">
       <a href="index.html" class="brand-logo">
-        <img src="/images/LASAL FOUNDATION LOGO.png" alt="lasal-foundation-logo">
+        <img src="images/lasal-foundation-logo.png" alt="lasal-foundation-logo">
       </a>
       <nav>
         <ul class="nav-links">
@@ -84,8 +85,7 @@
           <!-- <li><a href="programs.html">Programs</a></li> -->
           <li><a href="community.html">Our Community</a></li>
           <li><a href="impact.html">Impact</a></li>
-          <li><a href="stories.html">Stories</a></li>
-          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="stories.html">Stories</a></li>          <li><a href="get-involved.html">Get Involved</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="donate.html" class="btn donate_btn active" style="padding: 0.5rem 1rem; color: white;">Donate</a></li>
         </ul>
@@ -102,21 +102,45 @@
         <p>100% of direct donations go towards student scholarships, tuition grants, and educational resources.</p>
       </div>
 
+      <div id="donation-bank-static" class="card" style="padding: var(--spacing-xl); margin-bottom: var(--spacing-lg); background-color: var(--bg-subtle);"></div>
+
       <div class="card" style="padding: var(--spacing-xl);">
         <form id="donation-form">
           <div class="form-group" style="margin-bottom: var(--spacing-lg);">
             <label class="form-label">Select Donation Amount</label>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-sm); margin-top: var(--spacing-xs);">
-              <button type="button" class="btn btn-outline1" style="padding: 0.75rem;">$25</button>
-              <button type="button" class="btn btn-outline1" style="padding: 0.75rem;">$50</button>
-              <button type="button" class="btn btn-primary" style="padding: 0.75rem; background-color: var(--secondary-color);">* $100</button>
-              <button type="button" class="btn btn-outline1" style="padding: 0.75rem;">$500</button>
+            <div class="donation-amount-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-sm); margin-top: var(--spacing-xs);">
+              <button type="button" class="btn btn-outline1 donation-amount-btn" data-donation-amount="25" style="padding: 0.75rem;">$25</button>
+              <button type="button" class="btn btn-outline1 donation-amount-btn" data-donation-amount="50" style="padding: 0.75rem;">$50</button>
+              <button type="button" class="btn btn-primary donation-amount-btn" data-donation-amount="100" style="padding: 0.75rem; background-color: var(--secondary-color);">$100</button>
+              <button type="button" class="btn btn-outline1 donation-amount-btn" data-donation-amount="500" style="padding: 0.75rem;">$500</button>
             </div>
+            <p id="donation-selected-equivalent" class="donation-equivalent-line" aria-live="polite"></p>
           </div>
 
+          <div id="bank-transfer-details" class="card" style="display: none; padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); background-color: var(--bg-subtle);"></div>
+
+          <!-- Card / PayPal (restore when re-enabling other payment methods)
+          <p id="paystack-note" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">
+            Card payments via Paystack can be enabled by adding your public key in <code>js/config/site-config.js</code>. Until then, card and PayPal requests are completed through WhatsApp with our team.
+          </p>
+          -->
+
           <div class="form-group" style="margin-bottom: var(--spacing-md);">
-            <label class="form-label" for="custom-amount">Or Custom Amount ($ USD)</label>
-            <input type="number" id="custom-amount" class="form-control" placeholder="100.00" min="1">
+            <span class="form-label">Or custom amount</span>
+            <div class="donation-currency-toggle" role="group" aria-label="Donation currency">
+              <label class="donation-currency-option">
+                <input type="radio" name="donation-currency" id="donation-currency-usd" value="usd" checked>
+                USD ($)
+              </label>
+              <label class="donation-currency-option">
+                <input type="radio" name="donation-currency" id="donation-currency-ngn" value="ngn">
+                Naira (?)
+              </label>
+            </div>
+            <label class="form-label" for="custom-amount" id="custom-amount-label">Custom amount (USD)</label>
+            <input type="number" id="custom-amount" class="form-control" placeholder="100" min="1" step="any">
+            <p id="donation-custom-equivalent" class="donation-equivalent-line" aria-live="polite"></p>
+            <p id="donation-rate-note" class="donation-rate-note"></p>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
@@ -133,8 +157,8 @@
           <div class="form-group" style="margin-bottom: var(--spacing-lg);">
             <label class="form-label" for="payment-method">Payment Method *</label>
             <select id="payment-method" class="form-control" required>
-              <option value="card">Credit / Debit Card</option>
-              <option value="paypal">PayPal</option>
+              <!-- <option value="card">Credit / Debit Card</option> -->
+              <!-- <option value="paypal">PayPal</option> -->
               <option value="bank">Direct Bank Transfer</option>
             </select>
           </div>
@@ -151,7 +175,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <!-- <h3>LASAL Foundation</h3> -->
-          <a href="index.html"><img src="/images/LOGO.jpg" alt="">
+          <a href="index.html"><img src="images/LOGO.jpg" alt="">
           <!-- <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.6; margin-bottom: var(--spacing-md);">
             Empowering deserving students with world-class scholarships, mentorship, and opportunities to shape a brighter future.
           </p> -->
@@ -182,7 +206,7 @@
             <li><span>📍 Suite 3, Canaan Plaza,  <br> Plot 2 Block 105 Lekki Phase 1, <br> Lekki Epe Expressway,  
               <br> Victoria Island, Lagos
               </span></li>
-            <li><span>📞 +234 803 400 4001</span></li>
+            <li><span>📞 0813 552 9645 · 0802 778 0305</span></li>
             <li><span>✉️ info@lasalfoundation.org</span></li>
           </ul>
         </div>
@@ -200,19 +224,14 @@
 
         <div class="social-links">
 
-          <a href="#" aria-label="Facebook">
+          <a href="https://www.facebook.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i class="fa-brands fa-facebook-f"></i>
           </a>
       
-          <a href="#" aria-label="Instagram">
+          <a href="https://www.instagram.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
           </a>
-      
-          <a href="#" aria-label="YouTube">
-              <i class="fa-brands fa-youtube"></i>
-          </a>
-      
-          <a href="#" aria-label="X">
+<a href="https://x.com/lasalfoundation" target="_blank" rel="noopener noreferrer" aria-label="X">
               <i class="fa-brands fa-x-twitter"></i>
           </a>
       
@@ -221,6 +240,7 @@
       </div>
   </footer>
 
+  <!-- <script src="https://js.paystack.co/v1/inline.js"></script> -->
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

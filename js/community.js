@@ -1,10 +1,12 @@
 import { scholarsData } from './data/scholars.js';
 import { alumniData } from './data/alumni.js';
+import { refreshScrollReveal } from './motion.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const combinedCommunity = [...scholarsData, ...alumniData];
   renderCommunityGrid(combinedCommunity);
   initCommunityFilters(combinedCommunity);
+  refreshScrollReveal();
 });
 
 function renderCommunityGrid(data) {
@@ -95,14 +97,17 @@ function initCommunityFilters(allData) {
     }
 
     renderCommunityGrid(filtered);
+    refreshScrollReveal();
   }
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      filterButtons.forEach(b => b.classList.remove('btn-primary', 'active'));
-      filterButtons.forEach(b => b.classList.add('btn-outline'));
+      filterButtons.forEach((b) => {
+        b.classList.remove('btn-primary', 'active', 'btn-outline');
+        b.classList.add('btn-outline1');
+      });
 
-      e.target.classList.remove('btn-outline');
+      e.target.classList.remove('btn-outline1', 'btn-outline');
       e.target.classList.add('btn-primary', 'active');
 
       currentType = e.target.getAttribute('data-type');

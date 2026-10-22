@@ -20,7 +20,7 @@ export const alumniData = [
       graduationYear: 2023,
       profession: "Cloud Architect at Nebula Systems",
       location: "Toronto, Canada",
-      quote: "The Veritas network continues to support me long after graduation through mentorship and collaboration.",
+      quote: "The LASAL network continues to support me long after graduation through mentorship and collaboration.",
       status: "alumni"
     },
     {
@@ -32,7 +32,7 @@ export const alumniData = [
       graduationYear: 2021,
       profession: "Fintech Product Manager",
       location: "Accra, Ghana",
-      quote: "Veritas instilled in me the importance of giving back. I now mentor incoming STEM scholars every term.",
+      quote: "LASAL instilled in me the importance of giving back. I now mentor incoming STEM scholars every term.",
       status: "alumni"
     }
   ];
