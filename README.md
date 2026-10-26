@@ -32,6 +32,8 @@ Card/PayPal/Paystack paths are **commented out** in `donate.html` and `js/forms.
 | `scholarships.html` / `scholarship-details.html` | Listings, filters, detail + quick apply |
 | `apply.html` | Multi-step scholarship application wizard |
 | `community.html` | Scholars & alumni grid with search/filters |
+| `member-details.html` | Scholar/alumni profile (`?id=` from `js/data/scholars.js` / `alumni.js`), opened by **View Profile** on Our Community |
+| `leader-details.html` | Full leadership profile (`?id=` from `js/data/leaders.js`), linked via **Read More** on About Us |
 | `stories.html` | Alumni reviews, success stories, **video stories**, photo highlights |
 | `story-details.html` | Full story text (`?id=` from `js/data/stories.js`) |
 | `student-media.html` | Redirect to `stories.html#photos-videos` |

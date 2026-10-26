@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h4 style="color: var(--secondary-color); margin-bottom: 0.25rem;">2. Educational Information</h4>
           <p><strong>Institution:</strong> ${applicationData.educationalInfo.institution}</p>
           <p><strong>Course:</strong> ${applicationData.educationalInfo.course} (${applicationData.educationalInfo.level})</p>
-          <p><strong>Student ID:</strong> ${applicationData.educationalInfo.studentId} | <strong>GPA / Standing:</strong> ${applicationData.educationalInfo.gpa}</p>
+          <p><strong>Student ID:</strong> ${applicationData.educationalInfo.studentId} | <strong>CGPA / Standing:</strong> ${applicationData.educationalInfo.gpa}</p>
         </div>
         <div style="margin-bottom: var(--spacing-md);">
           <h4 style="color: var(--secondary-color); margin-bottom: 0.25rem;">3. Scholarship & Statements</h4>

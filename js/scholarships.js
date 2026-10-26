@@ -21,7 +21,7 @@ function renderScholarshipsList(filter = 'All') {
 
   const filtered = filter === 'All' 
     ? scholarshipsData 
-    : scholarshipsData.filter(s => s.category.includes(filter));
+    : scholarshipsData.filter(s => s.category.includes(filter) || s.title.includes(filter));
 
   if (filtered.length === 0) {
     container.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 3rem 0;">No scholarship opportunities match the selected filter.</p>`;
@@ -100,7 +100,7 @@ function renderScholarshipDetails() {
 
       <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm); font-size: 1.25rem;">Required Application Materials</h3>
       <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-muted); margin-bottom: var(--spacing-xl); line-height: 1.8;">
-        <li>Official academic transcripts (minimum 3.5 GPA equivalent).</li>
+        <li>Official academic transcripts (minimum CGPA of 3.50 on a 5.0 scale).</li>
         <li>Two letters of recommendation (academic or professional).</li>
         <li>Personal statement / essay (500–750 words) detailing career aspirations and community impact goals.</li>
         <li>Proof of enrollment or admission letter from an accredited institution.</li>

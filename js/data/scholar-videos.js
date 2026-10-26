@@ -34,14 +34,14 @@ export const scholarVideos = [
   {
     id: 'lasal-video-5',
     videoId: 'y2VXDxXHDCs',
-    title: 'LASAL scholar story',
+    title: 'Appreciation video 5',
     watchUrl: 'https://youtu.be/y2VXDxXHDCs',
     format: 'short',
   },
   {
     id: 'lasal-video-6',
     videoId: '9uU3CojG2Aw',
-    title: 'LASAL scholar story',
+    title: 'Appreciation video 6',
     watchUrl: 'https://youtu.be/9uU3CojG2Aw',
     format: 'short',
   },

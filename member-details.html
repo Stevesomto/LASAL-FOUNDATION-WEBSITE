@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Member Profile | LASAL Foundation</title>
+
+  <meta name="description" content="Profile of a LASAL Foundation scholar or alumnus—their studies, institution and what the scholarship meant to them.">
+  <meta name="keywords" content="LASAL scholars, alumni network, beneficiary stories, student community">
+  <meta name="author" content="LASAL Foundation">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#DF7434">
+  <meta name="format-detection" content="telephone=no">
+  <!-- Optional: <meta name="google-site-verification" content="YOUR_CODE"> -->
+  <link rel="canonical" href="https://lasalfoundation.org/member-details.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_NG">
+  <meta property="og:site_name" content="LASAL Foundation">
+  <meta property="og:title" content="Member Profile | LASAL Foundation">
+  <meta property="og:description" content="Profile of a LASAL Foundation scholar or alumnus—their studies, institution and what the scholarship meant to them.">
+  <meta property="og:url" content="https://lasalfoundation.org/member-details.html">
+  <meta property="og:image" content="https://lasalfoundation.org/images/LOGO.jpg">
+  <meta property="og:image:alt" content="LASAL Foundation logo">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Member Profile | LASAL Foundation">
+  <meta name="twitter:description" content="Profile of a LASAL Foundation scholar or alumnus—their studies, institution and what the scholarship meant to them.">
+  <meta name="twitter:image" content="https://lasalfoundation.org/images/LOGO.jpg">
+  
+  <!--STYLESHEETS-->
+  <link rel="stylesheet" href="css/main.css?v=2">
+  <link rel="stylesheet" href="css/components.css?v=8">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="shortcut icon" href="images/LOGO.jpg" type="image/x-icon">
+
+  <script src="js/theme-init.js"></script>
+</head>
+<body>
+
+  <!-- Top Contact / Social Bar -->
+  <div class="header-head" style="background-color: var(--primary-color);color: #ffffff; font-size: 0.85rem; padding: 0.5rem 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: var(--spacing-md);">
+        <span>📞 <span class="contact-phone-links"><a href="tel:+2348135529645">0813 552 9645</a> · <a href="tel:+2348027780305">0802 778 0305</a></span></span>
+        <span>✉️ <a href="mailto:info@lasalfoundation.org">info@lasalfoundation.org</a></span>
+      </div>
+
+      <div class="social-media">
+        <a href="https://www.facebook.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/lasalfoundation" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+
+      <div style="display: flex; gap: var(--spacing-md);">
+        <a href="get-involved.html" style="color: var(--accent-color); font-weight: 600;">Partner With Us</a>
+        <a href="donate.html" style="color: var(--accent-light); font-weight: 600;">Support Our Cause</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo">
+        <img src="images/lasal-foundation-logo.png" alt="lasal-foundation-logo">
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <!-- <li><a href="programs.html">Programs</a></li> -->
+          <li><a href="community.html" class="active">Our Community</a></li>
+          <li><a href="impact.html">Impact</a></li>
+          <li><a href="stories.html">Stories</a></li>          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html" class="btn donate_btn" style="color: white; padding: 0.5rem 1rem;">Donate</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width: 1000px;">
+      <p style="margin-bottom: var(--spacing-lg);">
+        <a href="community.html" style="color: var(--secondary-color); font-weight: 600;">&larr; Back to Our Community</a>
+      </p>
+      <div id="member-detail-container"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html"><img src="images/LOGO.jpg" alt="LASAL Foundation home"></a>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="scholarships.html">Scholarship Opportunities</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="community.html">Our Community</a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support & Get Involved</h3>
+          <ul>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="get-involved.html">Partner With Us</a></li>
+            <li><a href="get-involved.html">Volunteer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><span>📍 Suite 3, Canaan Plaza, <br> Plot 2 Block 105 Lekki Phase 1, <br> Lekki Epe Expressway, <br> Victoria Island, Lagos</span></li>
+            <li><span>📞 <span class="contact-phone-links"><a href="tel:+2348135529645">0813 552 9645</a> · <a href="tel:+2348027780305">0802 778 0305</a></span></span></li>
+            <li><span>✉️ <a href="mailto:info@lasalfoundation.org">info@lasalfoundation.org</a></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span class="current-year">2026</span> LASAL Foundation. All rights reserved.
+          Built by <a href="https://stephen-somtochukwu.vercel.app" target="_blank" rel="noopener noreferrer">Stephen Somtochukwu</a>, a LASAL Scholar.
+        </p>
+        <div class="social-links">
+        <a href="https://www.facebook.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/lasalfoundation/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/lasalfoundation" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/member-details.js"></script>
+</body>
+</html>

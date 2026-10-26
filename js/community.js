@@ -29,8 +29,8 @@ function renderCommunityGrid(data) {
       <div class="card community-card" data-id="${member.id}" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="position: relative;">
-            <img src="${member.image}" alt="${member.name}" style="height: 240px; width: 100%; object-fit: cover;">
-            <div style="position: absolute; top: 12px; right: 12px;">
+            <img src="${member.image}" alt="${member.name}" class="community-card-photo" width="400" height="500" loading="lazy" decoding="async">
+            <div style="position: absolute; bottom: 12px; left: 12px;">
               <span class="${badgeClass}" style="box-shadow: var(--shadow-sm);">${badgeText}</span>
             </div>
           </div>
@@ -43,19 +43,11 @@ function renderCommunityGrid(data) {
           </div>
         </div>
         <div style="padding: 0 var(--spacing-lg) var(--spacing-lg); border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
-          <button class="btn btn-outline1 view-profile-btn" data-id="${member.id}" style="width: 100%; padding: 0.5rem; font-size: 0.85rem;">View Profile</button>
+          <a href="member-details.html?id=${encodeURIComponent(member.id)}" class="btn btn-outline1 view-profile-btn" aria-label="View profile of ${member.name.trim()}" style="width: 100%; padding: 0.5rem; font-size: 0.85rem; text-align: center;">View Profile</a>
         </div>
       </div>
     `;
   }).join('');
-
-  // Attach event listeners to profile view buttons (Ready for future REST API routing /modal)
-  document.querySelectorAll('.view-profile-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const id = e.target.getAttribute('data-id');
-      alert(`API Endpoint Ready: /api/community/${id}\n(Dynamic profile modal or detail view will load here upon backend activation).`);
-    });
-  });
 }
 
 function initCommunityFilters(allData) {

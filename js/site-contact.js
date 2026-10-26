@@ -1,35 +1,29 @@
 import { CONTACT_PHONES_DISPLAY, SOCIAL_URLS } from './config/site-config.js';
 
-const LEGACY_PHONE = '+234 803 400 4001';
-const PHONE_DISPLAY = `📞 ${CONTACT_PHONES_DISPLAY}`;
+/** Nigerian local format (0813…) → international tel: link (+234813…). */
+function telHref(display) {
+  const digits = display.replace(/\D/g, '');
+  return `tel:${digits.startsWith('0') ? `+234${digits.slice(1)}` : `+${digits}`}`;
+}
 
-const PHONE_PAIR =
-  /0813\s*552\s*9645\s*[^\d\s][^\d]*?\s*0802\s*778\s*0305|0813\s*552\s*9645\s+0802\s*778\s*0305/g;
+function phoneLinksHtml() {
+  return CONTACT_PHONES_DISPLAY.split('·')
+    .map((phone) => phone.trim())
+    .filter(Boolean)
+    .map((phone) => `<a href="${telHref(phone)}">${phone}</a>`)
+    .join(' · ');
+}
 
-/** Apply phones and social URLs from site-config across static HTML pages. */
+/** Apply phones, social URLs, and the copyright year from site-config across static HTML pages. */
 export function initSiteContact() {
-  document.querySelectorAll('span, li, p').forEach((el) => {
-    if (el.textContent.includes(LEGACY_PHONE)) {
-      el.textContent = el.textContent.replace(LEGACY_PHONE, CONTACT_PHONES_DISPLAY);
-    }
-    if (/0813\s*552\s*9645/.test(el.textContent) && /0802\s*778\s*0305/.test(el.textContent)) {
-      el.textContent = el.textContent.replace(PHONE_PAIR, CONTACT_PHONES_DISPLAY);
-    }
+  const phoneLinks = phoneLinksHtml();
+  document.querySelectorAll('.contact-phone-links').forEach((el) => {
+    el.innerHTML = phoneLinks;
   });
 
-  document.querySelectorAll('.header-head span').forEach((el) => {
-    if (el.textContent.includes('📞')) {
-      el.textContent = PHONE_DISPLAY;
-    }
-  });
-
-  document.querySelectorAll('.site-footer span, .site-footer li').forEach((el) => {
-    if (el.textContent.includes('📞') && /0813/.test(el.textContent)) {
-      const hasPhoneLabel = /phone\s*:/i.test(el.textContent);
-      el.textContent = hasPhoneLabel
-        ? `📞 Phone: ${CONTACT_PHONES_DISPLAY}`
-        : PHONE_DISPLAY;
-    }
+  const year = String(new Date().getFullYear());
+  document.querySelectorAll('.current-year').forEach((el) => {
+    el.textContent = year;
   });
 
   const socialMap = [
