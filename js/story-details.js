@@ -36,7 +36,7 @@ function renderStoryDetail() {
 
   container.innerHTML = `
     <article>
-      <img src="${story.image}" alt="${story.author || story.title}" style="width: 100%; max-height: 420px; object-fit: cover; object-position: ${story.imagePosition || 'center top'}; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);">
+      ${story.imageFit === 'contain' ? '' : `<img src="${story.image}" alt="${story.author || story.title}" style="width: 100%; max-height: 420px; object-fit: cover; object-position: ${story.imagePosition || 'center top'}; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);">`}
       <span class="badge badge-teal">${story.category}</span>
       <h1 style="font-size: 2.25rem; color: var(--primary-color); margin: var(--spacing-sm) 0 var(--spacing-md);">${heading}</h1>
       ${byline}

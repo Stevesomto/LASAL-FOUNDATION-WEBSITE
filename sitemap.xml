@@ -1,13 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://lasalfoundation.org/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://lasalfoundation.org/about.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://lasalfoundation.org/scholarships.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://lasalfoundation.org/apply.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://lasalfoundation.org/community.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lasalfoundation.org/impact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lasalfoundation.org/stories.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://lasalfoundation.org/get-involved.html</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://lasalfoundation.org/donate.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://lasalfoundation.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lasalfoundation.org/</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lasalfoundation.org/about.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lasalfoundation.org/scholarships.html</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lasalfoundation.org/apply.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lasalfoundation.org/community.html</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lasalfoundation.org/impact.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lasalfoundation.org/stories.html</loc><lastmod>2026-10-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lasalfoundation.org/get-involved.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lasalfoundation.org/donate.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://lasalfoundation.org/contact.html</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Scholarship details (ids from js/data/scholarships.js) -->
+  <url><loc>https://lasalfoundation.org/scholarship-details.html?id=stem-excellence-2026</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lasalfoundation.org/scholarship-details.html?id=community-leadership-award</loc><lastmod>2026-10-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Stories (ids from js/data/stories.js) -->
+  <url><loc>https://lasalfoundation.org/story-details.html?id=gbonjubola-yusuff-story</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lasalfoundation.org/story-details.html?id=anthonia-abah-story</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lasalfoundation.org/story-details.html?id=saliu-akeem-story</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lasalfoundation.org/story-details.html?id=abayomi-oyeleye-story</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lasalfoundation.org/story-details.html?id=genesis-adewuyi-story</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Leadership profiles (ids from js/data/leaders.js) -->
+  <url><loc>https://lasalfoundation.org/leader-details.html?id=funmi-oyetunji</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lasalfoundation.org/leader-details.html?id=bisi-ogunko</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://lasalfoundation.org/leader-details.html?id=abiola-barwa</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/leader-details.html?id=rita-ebii</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- Community profiles (ids from js/data/scholars.js and js/data/alumni.js) -->
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-001</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-002</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-003</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-004</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-005</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-006</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-007</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-008</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=sch-009</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=alum-101</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=alum-102</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=alum-103</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=alum-104</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://lasalfoundation.org/member-details.html?id=alum-105</loc><lastmod>2026-10-27</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 </urlset>

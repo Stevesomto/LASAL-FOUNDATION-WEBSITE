@@ -40,7 +40,7 @@ export function renderMediaStories() {
       .map(
         (s) => `
       <article class="card media-story-card no-reveal">
-        <img src="${s.image}" alt="${s.studentName}" style="height: 220px; width: 100%; object-fit: cover; object-position: ${s.imagePosition || 'center top'};">
+        <img src="${s.image}" alt="${s.studentName}" class="story-card-photo${s.imageFit === 'contain' ? ' is-contain' : ''}" style="object-position: ${s.imagePosition || 'center top'};" loading="lazy" decoding="async">
         <div class="card-body">
           <span class="badge">${s.category}</span>
           <h3 style="font-size: 1.2rem; color: var(--primary-color); margin: var(--spacing-sm) 0;">${s.title}</h3>

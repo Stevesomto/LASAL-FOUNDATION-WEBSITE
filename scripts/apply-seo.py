@@ -111,7 +111,7 @@ def build_seo_block(page: dict) -> str:
         '  <meta property="og:image:alt" content="LASAL Foundation logo">',
         "",
         "  <!-- Twitter / X -->",
-        '  <meta name="twitter:card" content="summary_large_image">',
+        '  <meta name="twitter:card" content="summary">',
         f'  <meta name="twitter:title" content="{title}">',
         f'  <meta name="twitter:description" content="{desc}">',
         f'  <meta name="twitter:image" content="{OG_IMAGE}">',

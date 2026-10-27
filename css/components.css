@@ -115,6 +115,7 @@
   margin: 0 auto var(--spacing-xl);
 }
 
+.section-header h1,
 .section-header h2 {
   font-size: 2.25rem;
   color: var(--primary-color);
@@ -1762,6 +1763,78 @@ html[data-theme="dark"] .challenge-highlight-box p:last-child {
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   color: var(--text-main);
+}
+
+/* =========================================================
+   Story card photos (homepage stories, Stories photo highlights)
+   ========================================================= */
+.story-card-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--bg-subtle);
+}
+
+.story-card-photo.is-contain {
+  object-fit: contain;
+  padding: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .story-card-photo {
+    aspect-ratio: 1 / 1;
+    max-height: 440px;
+  }
+}
+
+/* =========================================================
+   Recognition (UNIOSUN financial aid listing)
+   ========================================================= */
+.recognition-card {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.recognition-card h2 {
+  color: var(--primary-color);
+  margin: var(--spacing-sm) 0 var(--spacing-md);
+}
+
+.recognition-lead {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.recognition-quote {
+  max-width: 640px;
+  margin: 0 auto var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-main);
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--secondary-color);
+  border-radius: var(--radius-md);
+}
+
+.recognition-quote cite {
+  display: block;
+  margin-top: var(--spacing-sm);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
 }
 
 /* =========================================================

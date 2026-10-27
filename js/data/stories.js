@@ -47,7 +47,8 @@ export const storiesData = [
     subtitle: "LASAL Foundation Alumnus",
     title: "From loss to graduation and a career abroad",
     category: "Alumni Success",
-    image: "images/story1.jpg",
+    image: "images/lasal-foundation-logo.png",
+    imageFit: "contain",
     excerpt:
       "After losing his father while preparing to enter 200 level, Akeem received LASAL support for tuition, accommodation, and mentorship. Today he is an alumnus working in the United States.",
     date: "LASAL Success Story",
@@ -59,7 +60,8 @@ export const storiesData = [
     subtitle: "LASAL Foundation Alumnus",
     title: "First Class honours and PhD pursuit",
     category: "Alumni Success",
-    image: "images/story2.jpg",
+    image: "images/lasal-foundation-logo.png",
+    imageFit: "contain",
     excerpt:
       "Abayomi graduated with First Class honours as Best Graduating Student in his department and is now pursuing his PhD in Portugal.",
     date: "LASAL Success Story",
@@ -71,7 +73,8 @@ export const storiesData = [
     subtitle: "Doctor of Veterinary Medicine | LASAL Foundation Alumnus",
     title: "Turning a dream into reality",
     category: "Alumni Success",
-    image: "images/story3.jpg",
+    image: "images/Genesis_Deborah.jpeg",
+    imagePosition: "center 30%",
     excerpt:
       "Genesis completed her DVM, finished NYSC, and practices as a freelance veterinarian with a focus on avian medicine.",
     date: "LASAL Success Story",

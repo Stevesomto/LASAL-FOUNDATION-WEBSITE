@@ -46,7 +46,7 @@ function renderFeaturedStories() {
 
   container.innerHTML = storiesData.map((story) => `
     <div class="card story-card">
-      <img src="${story.image}" alt="${story.author || story.title}" style="height: 200px; width: 100%; object-fit: cover; object-position: ${story.imagePosition || 'center top'};">
+      <img src="${story.image}" alt="${story.author || story.title}" class="story-card-photo${story.imageFit === 'contain' ? ' is-contain' : ''}" style="object-position: ${story.imagePosition || 'center top'};" loading="lazy" decoding="async">
       <div class="card-body">
         <span class="badge" style="margin-bottom: var(--spacing-xs);">${story.category}</span>
         <h3 style="font-size: 1.15rem; margin-bottom: var(--spacing-sm); color: var(--primary-color);">${story.author || story.title}</h3>
