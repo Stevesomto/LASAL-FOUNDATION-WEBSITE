@@ -16,7 +16,7 @@ PAGES = {
     },
     "about.html": {
         "title": "About Us | LASAL Foundation",
-        "description": "Mission, vision, and leadership of LASAL Foundation—supporting indigent Nigerian students through scholarships and mentorship since 2015.",
+        "description": "Mission, vision, and leadership of LASAL Foundation—supporting indigent Nigerian students through scholarships and mentorship since 2016.",
         "keywords": "about LASAL Foundation, Lateef Ajibade Salami, education NGO Nigeria, mission vision",
         "path": "/about.html",
     },
@@ -127,7 +127,7 @@ def build_seo_block(page: dict) -> str:
             f'    "url": "{ORIGIN}/",\n'
             f'    "logo": "{OG_IMAGE}",\n'
             '    "description": "Promoting social mobility through scholarships and mentorship for indigent students in Nigeria.",\n'
-            '    "email": "info@lasalfoundation.org",\n'
+            '    "email": "lasalfoundation06@gmail.com",\n'
             '    "telephone": "+234-813-552-9645",\n'
             '    "address": {\n'
             '      "@type": "PostalAddress",\n'

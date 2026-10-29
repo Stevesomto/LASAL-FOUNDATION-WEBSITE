@@ -43,20 +43,20 @@ export const leadersData = [
   },
   {
     id: "abiola-barwa",
-    name: "Mrs. Abiola Barwa",
+    name: "Mrs. Tokunbo Mumuney",
     role: "Trustee",
     image: "images/LOGO.jpg",
-    imageAlt: "Mrs. Abiola Barwa, Trustee of LASAL Foundation",
+    imageAlt: "Mrs. Tokunbo Mumuney, Trustee of LASAL Foundation",
     imagePosition: "center top",
     imageFit: "contain",
     bio: ["Supports governance, stakeholder engagement, and the Foundation’s commitment to transparency and impact."]
   },
   {
-    id: "rita-ebii",
-    name: "Ms. Rita Ebii",
+    id: "rita-Ebi",
+    name: "Ms. Rita Ebi",
     role: "Programs Officer",
     image: "images/rita_ebi.jpeg",
-    imageAlt: "Ms. Rita Ebii",
+    imageAlt: "Ms. Rita Ebi",
     imagePosition: "center top",
     bio: ["Manages scholarship applications and awards, coordinates beneficiaries, monitors students’ academic progress, maintains programme records, and ensures the effective implementation of scholarship programmes."]
   }

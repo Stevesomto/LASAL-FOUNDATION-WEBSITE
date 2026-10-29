@@ -2,7 +2,7 @@
 export const WHATSAPP_NUMBER = '2348135529645';
 
 /** Shown in header, footer, and contact areas. */
-export const CONTACT_PHONES_DISPLAY = '0813 552 9645 · 0802 778 0305';
+export const CONTACT_PHONES_DISPLAY = '0805 700 1924 · ';
 
 export const SOCIAL_URLS = {
   facebook: 'https://www.facebook.com/lasalfoundation/',

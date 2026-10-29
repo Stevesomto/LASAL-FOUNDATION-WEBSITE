@@ -1,6 +1,6 @@
 # LASAL Foundation Website
 
-Static multi-page website for the **Lateef Ajibade Salami (LASAL) Foundation**, a Lagos-based NGO (founded 2015) that awards scholarships and mentorship to indigent but brilliant students in Nigerian tertiary institutions.
+Static multi-page website for the **Lateef Ajibade Salami (LASAL) Foundation**, a Lagos-based NGO (founded 2016) that awards scholarships and mentorship to indigent but brilliant students in Nigerian tertiary institutions.
 
 Built with **HTML5, CSS3 and vanilla JavaScript (ES modules)**. No framework, no build step and no backend: forms hand their data to **WhatsApp**. Runs on XAMPP/Apache or any static host.
 
@@ -103,7 +103,7 @@ Example scholar entry:
 | Setting | Purpose |
 |--------|---------|
 | `WHATSAPP_NUMBER` | Number that receives all form submissions, international format without `+` (`2348135529645`). |
-| `CONTACT_PHONES_DISPLAY` | Phones shown in the top bar, footer and Contact page (`0813 552 9645 · 0802 778 0305`). `js/site-contact.js` turns each number into a `tel:` link automatically. |
+| `CONTACT_PHONES_DISPLAY` | Phones shown in the top bar, footer and Contact page (`0805 700 1924 · `). `js/site-contact.js` turns each number into a `tel:` link automatically. |
 | `SOCIAL_URLS` | Facebook, Instagram, X. YouTube is commented out until a channel exists. |
 | `DONATION_BANK` | Ecobank and Stanbic IBTC accounts shown on Donate and in the WhatsApp message. |
 | `DONATION_USD_TO_NGN` | Estimated rate for USD ↔ naira equivalents on Donate (update as needed). |
@@ -179,7 +179,7 @@ All animations are disabled for visitors who have **reduced motion** turned on i
 ## Pending content (needs the client)
 
 - [ ] New deadline (or closed status) for the STEM Excellence Scholarship (currently 15 October 2026)
-- [ ] Photo and full biography for Mrs. Abiola Barwa
+- [ ] Photo and full biography for Mrs. Tokunbo Mumuney
 - [ ] Real photos of Saliu Akeem Olanrewaju and Abayomi Oyeleye (currently the logo placeholder)
 - [ ] Approval of the drafted quotes for Adegoke Lukumon Bidemi and Disu Qazim Opeyemi; a real quote for Ojuade Ololade
 - [ ] Confirm the office address (Lekki Phase 1 vs Victoria Island)
