@@ -42,14 +42,16 @@ export const leadersData = [
     ]
   },
   {
-    id: "abiola-barwa",
-    name: "Mrs. Tokunbo Mumuney",
+    id: "tokunbo",
+    name: "Mrs. Tokunbo Olufela Mumuney",
     role: "Trustee",
-    image: "images/LOGO.jpg",
+    image: "images/MUMNEY.jpeg",
     imageAlt: "Mrs. Tokunbo Mumuney, Trustee of LASAL Foundation",
     imagePosition: "center top",
     imageFit: "contain",
-    bio: ["Supports governance, stakeholder engagement, and the Foundation’s commitment to transparency and impact."]
+    bio: ["Mrs. Tokunbo Olufela Mumuney is an accomplished real estate executive with extensive experience in banking, real estate, housing management, and property administration. She retired as Deputy General Manager, Commercial Properties, at the Lagos State Development and Property Corporation (LSDPC) in June 2015 and currently serves as Head of Practice at Florentina Ventures and Homes, a real estate firm she founded.",
+    "She holds a degree in Mathematics from the University of Port Harcourt, an MBA from Ladoke Akintola University of Technology, and a degree in Real Estate Management from the University of Reading. She is a member of the Royal Institution of Chartered Surveyors (RICS).",
+    "As a mentor with the LASAL Foundation, she contributes her wealth of experience and knowledge to guiding and empowering young people."]
   },
   {
     id: "rita-Ebi",

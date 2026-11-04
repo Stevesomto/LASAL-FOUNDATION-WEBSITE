@@ -45,6 +45,14 @@ export const scholarVideos = [
     watchUrl: 'https://youtu.be/9uU3CojG2Aw',
     format: 'short',
   },
+
+  {
+    id: 'lasal-video-6',
+    videoId: 'N4TTDZ-BapQ',
+    title: 'Appreciation video 7',
+    watchUrl: 'https://youtu.be/N4TTDZ-BapQ',
+    format: 'short',
+  },
 ];
 
 /** Privacy-enhanced embed with minimal YouTube chrome (channel name still appears after play). */
