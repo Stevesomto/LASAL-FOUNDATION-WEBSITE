@@ -15,6 +15,58 @@ function removeLegacyPhotosVideosNav() {
   });
 }
 
+const ABOUT_SUBMENU = [
+  { href: 'about.html#governance', label: 'Governance' },
+  { href: 'about.html#leadership', label: 'Leadership' },
+];
+
+/** Turns the "About Us" nav item into a dropdown (hover on desktop, tap the arrow on mobile). */
+function addAboutDropdown() {
+  const aboutLink = document.querySelector('.nav-links > li > a[href="about.html"]');
+  const item = aboutLink?.parentElement;
+  if (!item || item.classList.contains('nav-dropdown')) return;
+
+  item.classList.add('nav-dropdown');
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'nav-dropdown-toggle';
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-label', 'Show About Us menu');
+  toggle.innerHTML = '<span aria-hidden="true">&#9662;</span>';
+
+  const submenu = document.createElement('ul');
+  submenu.className = 'nav-submenu';
+  submenu.innerHTML = ABOUT_SUBMENU.map((link) => `<li><a href="${link.href}">${link.label}</a></li>`).join('');
+
+  aboutLink.after(toggle, submenu);
+
+  const setOpen = (open) => {
+    item.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    setOpen(!item.classList.contains('open'));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!item.contains(event.target)) setOpen(false);
+  });
+
+  item.addEventListener('focusout', (event) => {
+    if (!item.contains(event.relatedTarget)) setOpen(false);
+  });
+
+  item.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+}
+
 function setMobileNavOpen(open) {
   const navLinks = document.querySelector('.nav-links');
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
@@ -35,6 +87,7 @@ function syncMobileNavOffset() {
 
 export function initNavigation() {
   removeLegacyPhotosVideosNav();
+  addAboutDropdown();
 
   const toggleBtn = document.querySelector('.mobile-menu-toggle');
   const navLinks = document.querySelector('.nav-links');

@@ -28,9 +28,19 @@ function renderLeaderDetail() {
       <div style="text-align: center; padding: var(--spacing-xl) 0;">
         <h1 style="font-size: 1.75rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">Profile not found</h1>
         <p style="color: var(--text-muted); margin-bottom: var(--spacing-lg);">We couldn&rsquo;t find that leadership profile.</p>
-        <a href="about.html#leadership" class="btn btn-primary">View Leadership &amp; Governance</a>
+        <a href="about.html#governance" class="btn btn-primary">View Governance</a>
+        <a href="about.html#leadership" class="btn btn-outline1" style="margin-left: var(--spacing-sm);">View Leadership</a>
       </div>`;
     return;
+  }
+
+  const section = leader.group === 'governance'
+    ? { href: 'about.html#governance', label: 'Governance' }
+    : { href: 'about.html#leadership', label: 'Leadership' };
+  const backLink = document.getElementById('leader-back-link');
+  if (backLink) {
+    backLink.href = section.href;
+    backLink.innerHTML = `&larr; Back to ${section.label}`;
   }
 
   const paragraphs = Array.isArray(leader.bio) ? leader.bio : [leader.bio];
@@ -54,7 +64,7 @@ function renderLeaderDetail() {
         <p style="color: var(--secondary-color); font-weight: 600; font-size: 1.05rem; margin-bottom: var(--spacing-lg);">${esc(leader.role)}, LASAL Foundation</p>
         ${paragraphs.map((p) => `<p>${esc(p)}</p>`).join('')}
         <p style="margin-top: var(--spacing-xl);">
-          <a href="about.html#leadership" class="btn btn-outline1">&larr; All Leadership</a>
+          <a href="${section.href}" class="btn btn-outline1">&larr; All ${section.label}</a>
         </p>
       </div>
     </article>

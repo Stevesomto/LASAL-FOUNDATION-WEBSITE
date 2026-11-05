@@ -32,7 +32,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css?v=2">
-  <link rel="stylesheet" href="css/components.css?v=11">
+  <link rel="stylesheet" href="css/components.css?v=12">
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="shortcut icon" href="images/LOGO.jpg" type="image/x-icon">
 
@@ -93,7 +93,7 @@
     
 <!-- About Us Hero Section -->
 <section class="about-hero">
-    <img src="images/IMAGE4.jpg" alt="LASAL Foundation" class="about-hero-image">
+    <img src="images/hero-nigerian-engineering-graduates.jpg" alt="Nigerian engineering graduates in green academic gowns" class="about-hero-image" style="object-position: center 40%;">
 
     <div class="about-hero-overlay"></div>
     <div class="container about-hero-content">
@@ -365,15 +365,15 @@
       </div>
     </section>
 
-    <!-- Leadership Board -->
-    <section class="section" id="leadership">
+    <!-- Governance -->
+    <section class="section" id="governance">
       <div class="container">
         <div class="section-header">
-          <h2>Leadership & Governance</h2>
-          <p>Guided by experienced educators, nonprofit leaders, and industry executives.</p>
+          <h2>Governance</h2>
+          <p>The Chairperson and Board of Trustees provide oversight, accountability, and strategic direction for the Foundation.</p>
         </div>
-        <!-- Cards are generated from js/data/leaders.js (see js/leadership.js) -->
-        <div id="leadership-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--spacing-xl);"></div>
+        <!-- Cards are generated from js/data/leaders.js (group: "governance") -->
+        <div id="governance-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--spacing-xl);"></div>
 
         <div class="section-header" style="margin-top: var(--spacing-xxl);">
           <h2>Advisory Board</h2>
@@ -391,6 +391,18 @@
             <p style="color: var(--text-muted); font-size: 0.9rem;">Advises on education, mentorship, and long-term strategy for scholar support.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="section bg-subtle" id="leadership">
+      <div class="container">
+        <div class="section-header">
+          <h2>Leadership</h2>
+          <p>The team that runs LASAL Foundation&rsquo;s programmes and supports our scholars day to day.</p>
+        </div>
+        <!-- Cards are generated from js/data/leaders.js (group: "leadership") -->
+        <div id="leadership-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 340px)); justify-content: center; gap: var(--spacing-xl);"></div>
       </div>
     </section>
   </main>

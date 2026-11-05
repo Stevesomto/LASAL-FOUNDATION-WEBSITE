@@ -58,5 +58,65 @@ export const alumniData = [
       location: "Nigeria",
       quote: "With LASAL Foundation's support, I could focus fully on my Mechanical Engineering studies at the University of Ibadan instead of worrying about fees. I am grateful for the opportunity and the mentorship that came with it.",
       status: "alumni"
+    },
+    {
+      id: "alum-106",
+      name: "Gbonjubola Yusuff Tunde",
+      image: "images/gbonjubola-yusuff-tunde.jpeg",
+      course: "Physiotherapy",
+      institution: "University of Ibadan",
+      graduationYear: 2025,
+      profession: "Physiotherapist",
+      location: "Nigeria",
+      quote: "To LASAL Foundation, thank you for believing in us, investing in our future, and reminding us that meaningful support can become a lifelong legacy",
+      status: "alumni"
+    },
+    {
+      id: "alum-107",
+      name: "Anthonia Abah",
+      image: "images/anthonia-abah-headshot.jpeg",
+      course: "Chemical Engineering",
+      institution: "Federal University of Technology Minna, Niger State",
+      graduationYear: 2025,
+      profession: "Chemical/Process Engineer",
+      location: "Nigeria",
+      quote: "Thank you LASAL Foundation for always. Truly, a gift that keeps giving.",
+      status: "alumni"
+    },
+    {
+      id: "alum-108",
+      name: "Saliu Akeem Olanrewaju",
+      image: "images/saliu-akeem-olanrewaju.png",
+      course: "Physiotherapy",
+      institution: "University of Ibadan",
+      graduationYear: 2023,
+      profession: "Physiotherapist",
+      location: "New Zealand",
+      quote: "After losing my father while preparing to enter 200 level, I faced serious financial challenges that threatened my education. Through a mentor, I discovered LASAL Foundation and received support for tuition and accommodation. The Foundation's mentorship programme strengthened my focus, discipline and outlook on life. Today, I am a proud LASAL alumnus practising as a physiotherapist in New Zealand, grateful for the support that helped me complete my undergraduate studies.",
+      status: "alumni"
+    },
+    {
+      id: "alum-109",
+      name: "Oyeleye Abayomi",
+      image: "images/oyeleye-abayomi.png",
+      course: "Civil Engineering",
+      institution: "University of Ibadan",
+      graduationYear: 2020,
+      profession: "Civil Engineer",
+      location: "Portugal",
+      quote: "Coming from a family of eight, Abayomi's education was threatened when his father lost his job, leaving his mother as the family's main source of income. Paying his university fees became a major challenge, and he feared he might not complete his studies. LASAL Foundation provided tuition support and a monthly stipend, allowing him to focus on his academics. He graduated with First Class honours and as the Best Graduating Student in his department. Today, he is pursuing his PhD in Portugal.",
+      status: "alumni"
+    },
+    {
+      id: "alum-110",
+      name: "Idowu Oluwatoyin Isaiah",
+      image: "images/idowu-oluwatoyin-isaiah.png",
+      course: "Electrical and Electronic Engineering",
+      institution: "Osun State University",
+      graduationYear: 2024,
+      profession: "Electrical and Electronic Engineer",
+      location: "Nigeria",
+      quote: "With LASAL Foundation's support, I could focus fully on my Electrical and Electronic Engineering studies at Osun State University instead of worrying about fees. I am grateful for the opportunity and the mentorship that came with it.",
+      status: "alumni"
     }
   ];

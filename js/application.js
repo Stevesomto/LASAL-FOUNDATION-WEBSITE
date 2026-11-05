@@ -1,8 +1,38 @@
 import { openWhatsApp } from './whatsapp.js';
+import { scholarshipsData, isScholarshipOpen } from './data/scholarships.js';
+
+/** Fills the scholarship dropdown from js/data/scholarships.js; returns false when none are open. */
+function populateScholarshipOptions(form) {
+    const select = form.querySelector('#scholarshipSelected');
+    const open = scholarshipsData.filter(isScholarshipOpen);
+    if (select) {
+        select.innerHTML = '<option value="">Select scholarship</option>' + open
+            .map((s) => `<option value="${s.title}">${s.title} (${s.amount})</option>`)
+            .join('');
+    }
+    return open.length > 0;
+}
+
+function showApplicationsClosed(form) {
+    const notice = document.createElement('div');
+    notice.className = 'card';
+    notice.style.cssText = 'padding: var(--spacing-xl); border-color: var(--secondary-color); text-align: center;';
+    notice.innerHTML = `
+        <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Applications Are Currently Closed</h3>
+        <p style="color: var(--text-muted); margin-bottom: var(--spacing-lg);">There are no scholarships open for applications right now. The next intake will be announced soon. Contact us to be notified when applications reopen.</p>
+        <a href="contact.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Contact Us</a>`;
+    form.replaceWith(notice);
+    document.querySelector('.wizard-progress')?.remove();
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('scholarship-application-wizard');
     if (!form) return;
+
+    if (!populateScholarshipOptions(form)) {
+        showApplicationsClosed(form);
+        return;
+    }
   
     const steps = form.querySelectorAll('.form-step');
     const progressSteps = document.querySelectorAll('.progress-step');

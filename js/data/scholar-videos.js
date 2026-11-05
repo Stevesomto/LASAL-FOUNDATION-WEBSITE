@@ -47,7 +47,7 @@ export const scholarVideos = [
   },
 
   {
-    id: 'lasal-video-6',
+    id: 'lasal-video-7',
     videoId: 'N4TTDZ-BapQ',
     title: 'Appreciation video 7',
     watchUrl: 'https://youtu.be/N4TTDZ-BapQ',

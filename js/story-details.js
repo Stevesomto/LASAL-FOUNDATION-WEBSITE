@@ -34,9 +34,17 @@ function renderStoryDetail() {
       }`
     : '';
 
+  const alt = story.author || story.title;
+  let heroImage = '';
+  if (story.imageFit === 'portrait') {
+    heroImage = `<img src="${story.image}" alt="${alt}" style="display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto var(--spacing-lg); border-radius: var(--radius-lg);">`;
+  } else if (story.imageFit !== 'contain') {
+    heroImage = `<img src="${story.image}" alt="${alt}" style="width: 100%; max-height: 420px; object-fit: cover; object-position: ${story.imagePosition || 'center top'}; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);">`;
+  }
+
   container.innerHTML = `
     <article>
-      ${story.imageFit === 'contain' ? '' : `<img src="${story.image}" alt="${story.author || story.title}" style="width: 100%; max-height: 420px; object-fit: cover; object-position: ${story.imagePosition || 'center top'}; border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg);">`}
+      ${heroImage}
       <span class="badge badge-teal">${story.category}</span>
       <h1 style="font-size: 2.25rem; color: var(--primary-color); margin: var(--spacing-sm) 0 var(--spacing-md);">${heading}</h1>
       ${byline}

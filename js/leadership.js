@@ -31,8 +31,16 @@ function leaderCard(leader) {
     </div>`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.getElementById('leadership-grid');
+function renderGroup(gridId, group) {
+  const grid = document.getElementById(gridId);
   if (!grid) return;
-  grid.innerHTML = leadersData.map(leaderCard).join('');
+  grid.innerHTML = leadersData
+    .filter((leader) => (leader.group || 'leadership') === group)
+    .map(leaderCard)
+    .join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderGroup('governance-grid', 'governance');
+  renderGroup('leadership-grid', 'leadership');
 });

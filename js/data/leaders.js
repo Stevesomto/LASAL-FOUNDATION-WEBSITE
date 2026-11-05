@@ -1,7 +1,9 @@
 /**
- * Leadership profiles (About Us > Leadership & Governance).
+ * People shown on the About page, in two sections.
  *
- * HOW TO ADD OR UPDATE A LEADER  (edit only this file)
+ * HOW TO ADD OR UPDATE A PERSON  (edit only this file)
+ *   - group   : "governance" (Chairperson, Board of Trustees) or
+ *               "leadership" (staff who run the Foundation day to day).
  *   - bio     : array of paragraphs. Shown IN FULL on leader-details.html?id=<id>.
  *   - summary : optional short intro for the About page card. If you leave it out,
  *               the card uses the first paragraph of `bio`.
@@ -14,6 +16,7 @@ export const leadersData = [
     id: "funmi-oyetunji",
     name: "Mrs. Funmi Oyetunji, B.Sc., FCA, FCCA",
     role: "Chairperson",
+    group: "governance",
     image: "images/leadership/oyetunji-funmilayo-portrait.jpg",
     imageAlt: "Mrs. Oyetunji Funmilayo, Chairperson of LASAL Foundation",
     imagePosition: "center top",
@@ -28,6 +31,7 @@ export const leadersData = [
     id: "bisi-ogunko",
     name: "Mrs. Adebisi Ogunko",
     role: "Trustee",
+    group: "governance",
     image: "images/Adebisi_Ogunko.jpeg",
     imageAlt: "Mrs. Adebisi Ogunko, Trustee of LASAL Foundation",
     imagePosition: "center top",
@@ -45,6 +49,7 @@ export const leadersData = [
     id: "tokunbo",
     name: "Mrs. Tokunbo Olufela Mumuney",
     role: "Trustee",
+    group: "governance",
     image: "images/MUMNEY.jpeg",
     imageAlt: "Mrs. Tokunbo Mumuney, Trustee of LASAL Foundation",
     imagePosition: "center top",
@@ -57,6 +62,7 @@ export const leadersData = [
     id: "rita-Ebi",
     name: "Ms. Rita Ebi",
     role: "Programs Officer",
+    group: "leadership",
     image: "images/rita_ebi.jpeg",
     imageAlt: "Ms. Rita Ebi",
     imagePosition: "center top",

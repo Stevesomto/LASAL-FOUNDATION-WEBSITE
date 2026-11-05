@@ -178,10 +178,14 @@ All animations are disabled for visitors who have **reduced motion** turned on i
 
 ## Pending content (needs the client)
 
-- [ ] New deadline (or closed status) for the STEM Excellence Scholarship (currently 15 October 2026)
+- [x] STEM Excellence Scholarship marked **Closed – next intake coming soon** (`status: "closed"` in `js/data/scholarships.js`)
+- [ ] New deadline for the next STEM Excellence intake (set `status: "open"` and update `deadline` to reopen)
 - [ ] Photo and full biography for Mrs. Tokunbo Mumuney
-- [ ] Real photos of Saliu Akeem Olanrewaju and Abayomi Oyeleye (currently the logo placeholder)
+- [x] Real photos of Saliu Akeem Olanrewaju and Abayomi Oyeleye
+- [ ] More Leadership (staff) profiles, if any, besides the Programs Officer
+- [ ] Photos and short bios for the Advisory Board (Chief Olaiya Orlando Ojo, Dr. Femi Oyetunji)
 - [ ] Approval of the drafted quotes for Adegoke Lukumon Bidemi and Disu Qazim Opeyemi; a real quote for Ojuade Ololade
+- [ ] First-person version of Abayomi Oyeleye's alumni quote (currently written about him, not by him)
 - [ ] Confirm the office address (Lekki Phase 1 vs Victoria Island)
 - [ ] Confirm the minimum CGPA (3.50 on a 5.0 scale) and the states count (impact counter says 13; the list names 14)
 

@@ -418,6 +418,144 @@
   color: var(--secondary-color);
 }
 
+/* Keep anchored sections (e.g. about.html#governance) clear of the sticky header */
+.section[id] {
+  scroll-margin-top: 110px;
+}
+
+/* About Us dropdown (built by js/navigation.js) */
+.nav-links .nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.nav-dropdown-toggle {
+  background: none;
+  border: 0;
+  padding: 0.25rem;
+  color: var(--text-main);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nav-dropdown-toggle span {
+  display: inline-block;
+  transition: transform var(--transition-normal);
+}
+
+.nav-dropdown.open .nav-dropdown-toggle span {
+  transform: rotate(180deg);
+}
+
+.nav-links .nav-submenu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: -1rem;
+  min-width: 190px;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal), visibility var(--transition-normal);
+  z-index: 1001;
+}
+
+/* Invisible bridge so the menu stays open while the pointer moves down to it */
+.nav-links .nav-submenu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.6rem;
+  height: 0.6rem;
+}
+
+.nav-links .nav-dropdown.open .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+@media (hover: hover) and (min-width: 769px) {
+  .nav-links .nav-dropdown:hover .nav-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-toggle span {
+    transform: rotate(180deg);
+  }
+}
+
+.nav-links .nav-submenu a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+}
+
+.nav-links .nav-submenu a:not(.btn)::after {
+  display: none;
+}
+
+.nav-links .nav-submenu a:hover {
+  background: var(--bg-subtle);
+}
+
+@media (max-width: 768px) {
+  .nav-links .nav-dropdown {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .nav-dropdown-toggle {
+    color: var(--text-light);
+    font-size: 1rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .nav-links .nav-submenu {
+    position: static;
+    display: none;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 0.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0;
+    border-radius: var(--radius-md);
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .nav-links .nav-submenu::before {
+    display: none;
+  }
+
+  .nav-links .nav-dropdown.open .nav-submenu {
+    display: block;
+  }
+
+  .nav-links .nav-submenu li a {
+    font-size: 1rem;
+    padding: 0.55rem 0.5rem;
+  }
+
+  .nav-links .nav-submenu a:hover {
+    background: transparent;
+  }
+}
+
 .navbar-actions {
   display: flex;
   align-items: center;
