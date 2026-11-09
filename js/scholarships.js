@@ -1,4 +1,4 @@
-import { scholarshipsData, isScholarshipOpen, deadlineText } from './data/scholarships.js';
+import { scholarshipsData, isScholarshipOpen, deadlineText, benefitsText } from './data/scholarships.js';
 import { bindScholarshipApplicationForm } from './forms.js';
 import { refreshScrollReveal } from './motion.js';
 import { updatePageMeta } from './seo-utils.js';
@@ -39,9 +39,9 @@ function renderScholarshipsList(filter = 'All') {
         <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: var(--spacing-md);">${s.description}</p>
         <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: var(--spacing-lg);"><strong>Eligibility:</strong> ${s.eligibility}</p>
       </div>
-      <div style="padding: 0 var(--spacing-lg) var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
-        <span style="font-weight: 700; color: var(--secondary-color); font-size: 1.05rem;">${s.amount}</span>
-        <a href="scholarship-details.html?id=${s.id}" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">${isScholarshipOpen(s) ? 'View & Apply' : 'View Details'}</a>
+      <div style="padding: 0 var(--spacing-lg) var(--spacing-lg); display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-md); border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
+        <span style="font-weight: 600; color: var(--secondary-color); font-size: 0.95rem;"><strong>Benefits:</strong> ${benefitsText(s)}</span>
+        <a style="flex-shrink: 0;" href="scholarship-details.html?id=${s.id}" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">${isScholarshipOpen(s) ? 'View & Apply' : 'View Details'}</a>
       </div>
     </div>
   `).join('');
@@ -89,7 +89,7 @@ function renderScholarshipDetails() {
       <div class="card" style="padding: var(--spacing-xl); margin-bottom: var(--spacing-xl); background-color: var(--bg-subtle);">
         <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-md); font-size: 1.25rem;">Key Grant Details</h3>
         <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md);">
-          <li><strong>Award Value:</strong><br><span style="color: var(--secondary-color); font-weight: 600; font-size: 1.1rem;">${scholarship.amount}</span></li>
+          <li><strong>Benefits:</strong><br><span style="color: var(--secondary-color); font-weight: 600;">${benefitsText(scholarship)}</span></li>
           <li><strong>Application Deadline:</strong><br><span style="color: ${isScholarshipOpen(scholarship) ? 'var(--text-main)' : 'var(--secondary-color)'}; font-weight: 600;">${deadlineText(scholarship)}</span></li>
           <li><strong>Target Audience:</strong><br><span style="color: var(--text-main);">${scholarship.category} Students</span></li>
         </ul>

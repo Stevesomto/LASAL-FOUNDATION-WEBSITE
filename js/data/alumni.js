@@ -1,6 +1,7 @@
 export const alumniData = [
     {
       id: "alum-101",
+      firstName: "Genesis",
       name: "Dr. Genesis Deborah Adewuyi (D.V.M)",
       image: "images/Genesis_Deborah.jpeg",
       course: "Veterinary Medicine",
@@ -13,6 +14,7 @@ export const alumniData = [
     },
     {
       id: "alum-102",
+      firstName: "Qazim",
       name: "Disu Qazim Opeyemi",
       image: "images/DISU_QAZIM_OPEYEMI.jpeg",
       course: "Mechanical Engineering",
@@ -25,6 +27,7 @@ export const alumniData = [
     },
     {
       id: "alum-103",
+      firstName: "Sylvia",
       name: "Andrew Ulan Sylvia",
       image: "images/Andrew_Ulan_Sylvia.jpeg",
       course: "Chemical Engineering",
@@ -37,6 +40,7 @@ export const alumniData = [
     },
     {
       id: "alum-104",
+      firstName: "Ololade",
       name: "Ojuade Ololade",
       image: "images/Ojuade_Ololad.jpeg",
       course: "Economics",
@@ -49,6 +53,7 @@ export const alumniData = [
     },
     {
       id: "alum-105",
+      firstName: "Lukumon",
       name: "Adegoke Lukumon Bidemi",
       image: "images/ADEGOK_Lukumon_Bidemi.jpeg",
       course: "Mechanical Engineering",
@@ -61,6 +66,7 @@ export const alumniData = [
     },
     {
       id: "alum-106",
+      firstName: "Yusuff",
       name: "Gbonjubola Yusuff Tunde",
       image: "images/gbonjubola-yusuff-tunde.jpeg",
       course: "Physiotherapy",
@@ -73,6 +79,7 @@ export const alumniData = [
     },
     {
       id: "alum-107",
+      firstName: "Anthonia",
       name: "Anthonia Abah",
       image: "images/anthonia-abah-headshot.jpeg",
       course: "Chemical Engineering",
@@ -85,6 +92,7 @@ export const alumniData = [
     },
     {
       id: "alum-108",
+      firstName: "Akeem",
       name: "Saliu Akeem Olanrewaju",
       image: "images/saliu-akeem-olanrewaju.png",
       course: "Physiotherapy",
@@ -97,6 +105,7 @@ export const alumniData = [
     },
     {
       id: "alum-109",
+      firstName: "Abayomi",
       name: "Oyeleye Abayomi",
       image: "images/oyeleye-abayomi.png",
       course: "Civil Engineering",
@@ -109,6 +118,7 @@ export const alumniData = [
     },
     {
       id: "alum-110",
+      firstName: "Oluwatoyin",
       name: "Idowu Oluwatoyin Isaiah",
       image: "images/idowu-oluwatoyin-isaiah.png",
       course: "Electrical and Electronic Engineering",

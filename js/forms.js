@@ -65,8 +65,6 @@ function initDonationForm() {
   const customEquivalentEl = document.getElementById('donation-custom-equivalent');
   const rateNoteEl = document.getElementById('donation-rate-note');
   const currencyRadios = form.querySelectorAll('input[name="donation-currency"]');
-  const bankPanel = document.getElementById('bank-transfer-details');
-  const paymentSelect = document.getElementById('payment-method');
   let selectedUsd = 100;
 
   function getDonationCurrency() {
@@ -106,10 +104,10 @@ function initDonationForm() {
         currency === 'ngn' ? 'Custom amount (Naira)' : 'Custom amount (USD)';
     }
     if (customAmountInput) {
-      customAmountInput.placeholder = currency === 'ngn' ? '160000' : '100';
+      customAmountInput.placeholder = currency === 'ngn' ? String(usdToNgn(100)) : '100';
     }
     if (rateNoteEl) {
-      rateNoteEl.textContent = `Estimated rate: ${formatNgn(DONATION_USD_TO_NGN)} per $1 USD (for guidance; your bank may differ).`;
+      rateNoteEl.textContent = `Current conversion rate: ${formatNgn(DONATION_USD_TO_NGN)} per $1 USD (for guidance; your bank may differ).`;
     }
 
     const amounts = resolveDonationAmounts();
@@ -120,10 +118,10 @@ function initDonationForm() {
     }
 
     const { usd, ngn, fromPreset } = amounts;
-    const pairLine = `${formatUsd(usd)} ≈ ${formatNgn(ngn)} for bank transfer`;
+    const pairLine = `${formatUsd(usd)} ≈ ${formatNgn(ngn)}`;
 
     if (fromPreset && selectedEquivalentEl) {
-      selectedEquivalentEl.textContent = `Selected: ${pairLine}`;
+      selectedEquivalentEl.textContent = `Current conversion rate: ${pairLine}`;
     } else if (selectedEquivalentEl) {
       selectedEquivalentEl.textContent = '';
     }
@@ -194,28 +192,14 @@ function initDonationForm() {
     });
   });
 
-  function toggleBankPanel() {
-    if (!bankPanel || !paymentSelect) return;
-    const show = paymentSelect.value === 'bank';
-    bankPanel.style.display = show ? 'block' : 'none';
-  }
-
-  if (paymentSelect) {
-    paymentSelect.addEventListener('change', toggleBankPanel);
-    toggleBankPanel();
-  }
-
   const staticBank = document.getElementById('donation-bank-static');
-  const bankHtml = donationBankDetailsHtml();
-  if (staticBank) staticBank.innerHTML = bankHtml;
-  if (bankPanel) bankPanel.innerHTML = bankHtml;
+  if (staticBank) staticBank.innerHTML = donationBankDetailsHtml();
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('donor-name')?.value.trim();
     const email = document.getElementById('donor-email')?.value.trim();
-    const method = paymentSelect?.value || 'bank';
     const amounts = resolveDonationAmounts();
     if (!amounts || amounts.usd <= 0 || amounts.ngn <= 0) {
       showFormFeedback(form, 'Please enter your details and a valid donation amount.', 'error');

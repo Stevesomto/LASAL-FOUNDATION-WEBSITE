@@ -17,7 +17,7 @@ export const SOCIAL_URLS = {
  * Estimated USD → NGN rate for donation equivalents on the Donate page (not live FX).
  * Update periodically; bank transfer is in NGN.
  */
-export const DONATION_USD_TO_NGN = 1600;
+export const DONATION_USD_TO_NGN = 1400;
 
 export function usdToNgn(usd) {
   return Math.round(Number(usd) * DONATION_USD_TO_NGN);
@@ -51,7 +51,6 @@ export const DONATION_BANK = {
     'Cheques may also be written in the Foundation’s account name. Use your full name as payment narration (e.g. Donation – Jane Doe).',
   accounts: [
     { bankName: 'Ecobank plc', accountNumber: '0015051133' },
-    { bankName: 'Stanbic IBTC', accountNumber: '0017096204' },
   ],
 };
 

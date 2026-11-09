@@ -38,19 +38,20 @@ lasal_foundation/
 | File | Description |
 |------|-------------|
 | `index.html` | Home: preloader, hero slider, The Challenge, impact counters, UNIOSUN recognition, Why LASAL, featured scholarships and stories, newsletter |
-| `about.html` | History, mission and vision, values, programmes, Cycle of Hope, Vision 2026–2029, code of conduct, Why Now, leadership and advisory board |
+| `about.html` | History, mission and vision, values, programmes, Cycle of Hope, Vision 2026–2029, code of conduct, Why Now |
+| `governance.html` | Governance (Chairperson, Board of Trustees), Advisory Board and Leadership; its own **Governance** menu item |
 | `scholarships.html` | Open scholarships with filters (All, Undergraduate, Community Leadership) |
 | `scholarship-details.html` | One scholarship (`?id=` from `js/data/scholarships.js`) with a quick-apply form |
 | `apply.html` | Five-step application wizard → WhatsApp summary with a `LAS-APP-` reference |
 | `community.html` | Current scholars and alumni grid with search, status and programme filters |
 | `member-details.html` | Scholar/alumni profile (`?id=` from `js/data/scholars.js` / `alumni.js`), opened by **View Profile** |
-| `leader-details.html` | Full leadership biography (`?id=` from `js/data/leaders.js`), opened by **Read More** on About Us |
+| `leader-details.html` | Full leadership biography (`?id=` from `js/data/leaders.js`), opened by **Read More** on Governance & Leadership |
 | `impact.html` | Beneficiary statistics, states reached, UNIOSUN recognition, Cycle of Hope |
-| `stories.html` | Alumni reviews, success stories, video stories, photo highlights |
+| `stories.html` | Alumni reviews, Stories from Alumni (videos), Testimonies of Parents (videos), photo highlights |
 | `story-details.html` | Full story (`?id=` from `js/data/stories.js`) |
-| `get-involved.html` | Partnerships, LASAL Impact Summit, storytelling, consultant workstreams, staff needs |
 | `contact.html` | Contact details and a message form → WhatsApp |
-| `donate.html` | Amount presets, USD/NGN amounts, bank details → WhatsApp donation notice |
+| `donate.html` | **Get Involved & Donate**: partnerships, LASAL Impact Summit, storytelling, then the donation section (`#donate`: amount presets, USD/NGN amounts, bank details → WhatsApp donation notice) |
+| `get-involved.html` | Old address; redirects to `donate.html` (`noindex`; also a 301 in `.htaccess`) |
 | `student-media.html` | Old address; redirects to `stories.html#photos-videos` (`noindex`) |
 | `index2.html` | Legacy homepage kept for reference; not linked anywhere (`noindex`) |
 
@@ -62,19 +63,20 @@ Most content lives in `js/data/`. Edit the file and refresh; the pages update au
 
 | File | Controls |
 |------|----------|
-| `scholars.js` | Current scholars on Our Community and their profile pages |
-| `alumni.js` | Alumni on Our Community and their profile pages |
-| `leaders.js` | Leadership cards on About Us and the leader profile pages |
-| `scholarships.js` | Scholarship cards (homepage and Scholarships) and detail pages |
+| `scholars.js` | Current scholars on Our Community and their profile pages (shown publicly as `firstName – institution`) |
+| `alumni.js` | Alumni on Our Community and their profile pages (shown publicly as `firstName – institution`) |
+| `leaders.js` | Governance and Leadership cards on `governance.html` (`group: "governance"` or `"leadership"`) and the leader profile pages |
+| `scholarships.js` | Scholarship cards (homepage and Scholarships) and detail pages; `status: "open" | "closed"`, `benefits` list |
 | `stories.js` | Homepage story cards and the full story pages |
 | `media-stories.js` | Photo Highlights on Stories |
-| `scholar-videos.js` | YouTube videos on Stories (`videoId`, `title`, `format: 'short'`) |
+| `scholar-videos.js` | YouTube videos on Stories (`videoId`, `title`, `format: 'short'`, `group: 'alumni'` or `'parent'`) |
 
 Example scholar entry:
 
 ```js
 {
   id: "sch-009",
+  firstName: "Stephen",
   name: "Anyanwu Stephen Somtochukwu",
   image: "images/stephen_somtochukwu.jpeg",
   program: "Computer and Robotics Education",
@@ -95,7 +97,8 @@ Example scholar entry:
   - `imageFit: "contain"` shows the whole image without cropping. Use it for the LASAL logo while waiting for a real photo (leaders, stories, photo highlights). Remove it once a real photo is added.
 - Only use real photos of the actual person. Do not use stock photos for named scholars or alumni.
 - Compress photos before adding them (aim for under 200 KB; JPEG for photos).
-- Scholarship amounts are in naira (`₦250,000 / year`) and CGPA requirements are on the 5.0 scale.
+- Scholarships list their `benefits` (tuition fees, learning materials, accommodation, monthly stipend) rather than a naira amount. CGPA requirements are on the 5.0 scale.
+- Community members are shown publicly by first name and school only. Set `firstName` explicitly; full names are kept in `name` for internal reference.
 - When you add, remove or rename an `id`, update `sitemap.xml` too.
 
 ## Configuration (`js/config/site-config.js`)
@@ -105,8 +108,8 @@ Example scholar entry:
 | `WHATSAPP_NUMBER` | Number that receives all form submissions, international format without `+` (`2348135529645`). |
 | `CONTACT_PHONES_DISPLAY` | Phones shown in the top bar, footer and Contact page (`0805 700 1924 · `). `js/site-contact.js` turns each number into a `tel:` link automatically. |
 | `SOCIAL_URLS` | Facebook, Instagram, X. YouTube is commented out until a channel exists. |
-| `DONATION_BANK` | Ecobank and Stanbic IBTC accounts shown on Donate and in the WhatsApp message. |
-| `DONATION_USD_TO_NGN` | Estimated rate for USD ↔ naira equivalents on Donate (update as needed). |
+| `DONATION_BANK` | Ecobank account shown on Donate and in the WhatsApp message. |
+| `DONATION_USD_TO_NGN` | "Current conversion rate" for USD ↔ naira on Donate (₦1,400 per $1; update as needed). |
 
 Donations are **bank transfer + WhatsApp** only. Card/PayPal/Paystack code is commented out in `donate.html` and `js/forms.js`; to re-enable it, uncomment those blocks and set `PAYSTACK_PUBLIC_KEY` in `site-config.js`.
 
@@ -173,7 +176,7 @@ All animations are disabled for visitors who have **reduced motion** turned on i
 
 ## Client reference
 
-- Strategy deck: `docs/LASAL_Foundation_Strategy_Presentation_updated_v2.pdf`. Copy on About, Impact, Stories and Get Involved follows that deck.
+- Strategy deck: `docs/LASAL_Foundation_Strategy_Presentation_updated_v2.pdf`. Copy on About, Impact, Stories and Get Involved & Donate follows that deck.
 - External recognition: LASAL is listed on [UNIOSUN's Financial Aid & Scholarships page](https://uniosun.edu.ng/financial-aid/) (shown on Home and Impact). Check the link occasionally.
 
 ## Pending content (needs the client)
@@ -188,6 +191,9 @@ All animations are disabled for visitors who have **reduced motion** turned on i
 - [ ] First-person version of Abayomi Oyeleye's alumni quote (currently written about him, not by him)
 - [ ] Confirm the office address (Lekki Phase 1 vs Victoria Island)
 - [ ] Confirm the minimum CGPA (3.50 on a 5.0 scale) and the states count (impact counter says 13; the list names 14)
+- [ ] Beneficiary details from the Program Officer (figures now 60 = 32 alumni + 20 scholars + 8 onboarding; the old 27 male / 25 female split was removed because it no longer adds up)
+- [ ] Confirm first names used on Our Community where the name order is unclear: Joseph (Omotayo Joseph), Sylvia (Andrew Ulan Sylvia), Lukumon (Adegoke Lukumon Bidemi), Yusuff (Gbonjubola Yusuff Tunde), Oluwatoyin (Idowu Oluwatoyin Isaiah)
+- [ ] Confirm which videos are parents' testimonies (currently videos 1 and 3 in `js/data/scholar-videos.js`)
 
 ## Deploy checklist
 

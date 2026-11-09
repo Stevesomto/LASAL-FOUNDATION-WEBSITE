@@ -2,6 +2,7 @@ import { scholarsData } from './data/scholars.js';
 import { alumniData } from './data/alumni.js';
 import { refreshScrollReveal } from './motion.js';
 import { updatePageMeta } from './seo-utils.js';
+import { memberDisplayName } from './member-name.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderMemberDetail();
@@ -33,21 +34,19 @@ function renderMemberDetail() {
     return;
   }
 
-  const name = member.name.trim();
+  const name = memberDisplayName(member);
   const isCurrent = member.status === 'current';
 
   const facts = (isCurrent
     ? [
         ['Programme', member.program],
         ['Level', member.level],
-        ['Institution', member.institution],
         ['Location', member.location],
         ['Scholarship', member.scholarship],
       ]
     : [
         ['Course', member.course],
         ['Graduation year', member.graduationYear],
-        ['Institution', member.institution],
         ['Location', member.location],
         ['Profession', member.profession],
       ]
@@ -55,7 +54,7 @@ function renderMemberDetail() {
 
   updatePageMeta({
     title: `${name} | LASAL Foundation`,
-    description: `${name} — ${isCurrent ? member.program : member.course}, ${String(member.institution).trim()}. A member of the LASAL Foundation community.`,
+    description: `${name}: ${isCurrent ? member.program : member.course}. A member of the LASAL Foundation community.`,
     path: `/member-details.html?id=${encodeURIComponent(member.id)}`,
     image: `https://lasalfoundation.org/${member.image.replace(/^\//, '')}`,
   });

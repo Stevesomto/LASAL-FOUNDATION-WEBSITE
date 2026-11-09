@@ -1,3 +1,8 @@
+# Get Involved was merged into the Donate page.
+<IfModule mod_alias.c>
+  Redirect 301 /get-involved.html /donate.html
+</IfModule>
+
 # JS modules under js/data/ are imported without ?v= query strings, so browsers must revalidate
 # HTML/CSS/JS on every load or visitors keep seeing stale content after an update.
 <IfModule mod_headers.c>

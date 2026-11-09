@@ -1,6 +1,7 @@
 import { scholarsData } from './data/scholars.js';
 import { alumniData } from './data/alumni.js';
 import { refreshScrollReveal } from './motion.js';
+import { memberDisplayName } from './member-name.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const combinedCommunity = [...scholarsData, ...alumniData];
@@ -24,26 +25,26 @@ function renderCommunityGrid(data) {
     const badgeText = isCurrent ? 'CURRENT SCHOLAR' : 'ALUMNI';
     const subtitle = isCurrent ? `${member.program} • ${member.level}` : `${member.course} (${member.graduationYear})`;
     const detailMeta = isCurrent ? `Scholarship: ${member.scholarship}` : `Profession: ${member.profession}`;
+    const displayName = memberDisplayName(member);
 
     return `
       <div class="card community-card" data-id="${member.id}" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="position: relative;">
-            <img src="${member.image}" alt="${member.name}" class="community-card-photo" width="400" height="500" loading="lazy" decoding="async">
+            <img src="${member.image}" alt="${displayName}" class="community-card-photo" width="400" height="500" loading="lazy" decoding="async">
             <div style="position: absolute; bottom: 12px; left: 12px;">
               <span class="${badgeClass}" style="box-shadow: var(--shadow-sm);">${badgeText}</span>
             </div>
           </div>
           <div class="card-body">
-            <h3 style="font-size: 1.25rem; color: var(--primary-color); margin-bottom: 0.25rem;">${member.name}</h3>
-            <p style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem; margin-bottom: var(--spacing-sm);">${subtitle}</p>
-            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: var(--spacing-md);">📍 ${member.institution} • ${member.location}</p>
+            <h3 style="font-size: 1.25rem; color: var(--primary-color); margin-bottom: 0.25rem;">${displayName}</h3>
+            <p style="color: var(--secondary-color); font-weight: 600; font-size: 0.9rem; margin-bottom: var(--spacing-md);">${subtitle}</p>
             <p style="color: var(--text-main); font-size: 0.9rem; font-style: italic; margin-bottom: var(--spacing-md);">"${member.quote}"</p>
             <p style="font-size: 0.85rem; font-weight: 600; color: var(--primary-color);">${detailMeta}</p>
           </div>
         </div>
         <div style="padding: 0 var(--spacing-lg) var(--spacing-lg); border-top: 1px solid var(--border-color); padding-top: var(--spacing-md);">
-          <a href="member-details.html?id=${encodeURIComponent(member.id)}" class="btn btn-outline1 view-profile-btn" aria-label="View profile of ${member.name.trim()}" style="width: 100%; padding: 0.5rem; font-size: 0.85rem; text-align: center;">View Profile</a>
+          <a href="member-details.html?id=${encodeURIComponent(member.id)}" class="btn btn-outline1 view-profile-btn" aria-label="View profile of ${displayName}" style="width: 100%; padding: 0.5rem; font-size: 0.85rem; text-align: center;">View Profile</a>
         </div>
       </div>
     `;
@@ -80,8 +81,8 @@ function initCommunityFilters(allData) {
     }
 
     if (searchTerm) {
-      filtered = filtered.filter(m => m.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                                    (m.institution && m.institution.toLowerCase().includes(searchTerm.toLowerCase())));
+      const term = searchTerm.toLowerCase();
+      filtered = filtered.filter(m => memberDisplayName(m).toLowerCase().includes(term));
     }
 
     if (selectedProgram !== 'all') {

@@ -7,7 +7,7 @@ function populateScholarshipOptions(form) {
     const open = scholarshipsData.filter(isScholarshipOpen);
     if (select) {
         select.innerHTML = '<option value="">Select scholarship</option>' + open
-            .map((s) => `<option value="${s.title}">${s.title} (${s.amount})</option>`)
+            .map((s) => `<option value="${s.title}">${s.title}</option>`)
             .join('');
     }
     return open.length > 0;

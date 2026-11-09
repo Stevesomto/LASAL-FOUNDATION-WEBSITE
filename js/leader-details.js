@@ -28,15 +28,15 @@ function renderLeaderDetail() {
       <div style="text-align: center; padding: var(--spacing-xl) 0;">
         <h1 style="font-size: 1.75rem; color: var(--primary-color); margin-bottom: var(--spacing-md);">Profile not found</h1>
         <p style="color: var(--text-muted); margin-bottom: var(--spacing-lg);">We couldn&rsquo;t find that leadership profile.</p>
-        <a href="about.html#governance" class="btn btn-primary">View Governance</a>
-        <a href="about.html#leadership" class="btn btn-outline1" style="margin-left: var(--spacing-sm);">View Leadership</a>
+        <a href="governance.html#governance" class="btn btn-primary">View Governance</a>
+        <a href="governance.html#leadership" class="btn btn-outline1" style="margin-left: var(--spacing-sm);">View Leadership</a>
       </div>`;
     return;
   }
 
   const section = leader.group === 'governance'
-    ? { href: 'about.html#governance', label: 'Governance' }
-    : { href: 'about.html#leadership', label: 'Leadership' };
+    ? { href: 'governance.html#governance', label: 'Governance' }
+    : { href: 'governance.html#leadership', label: 'Leadership' };
   const backLink = document.getElementById('leader-back-link');
   if (backLink) {
     backLink.href = section.href;

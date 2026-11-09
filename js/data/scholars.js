@@ -1,6 +1,7 @@
 export const scholarsData = [
     {
       id: "sch-001",
+      firstName: "Fathia",
       name: "Oderinola Fathia Yoyinsola",
       image: "images/Oderinola_Fathia.jpeg",
       program: "Public and International Law",
@@ -13,6 +14,7 @@ export const scholarsData = [
     },
     {
       id: "sch-002",
+      firstName: "Joseph",
       name: "Omotayo Joseph",
       image: "images/Omotayo_Joseph.jpeg",      
       program: "Medicine and Surgery",
@@ -25,6 +27,7 @@ export const scholarsData = [
     },
     {
       id: "sch-003",
+      firstName: "Josephine",
       name: "Josephine Oluwaseun Ojo",
       image: "images/Josephine.jpeg",
       program: "Law",
@@ -37,6 +40,7 @@ export const scholarsData = [
     },
     {
       id: "sch-004",
+      firstName: "Gabriel",
       name: "Obasi Gabriel Somtochukwu",
       image: "images/Obasi_Gabriel_Somtochukwu.jpeg",
       program: "Theatre Art",
@@ -49,6 +53,7 @@ export const scholarsData = [
     },
     {
       id: "sch-005",
+      firstName: "Precious",
       name: "Olukare Precious Busayo",
       image: "images/Olukare_Precious_Busayo.jpeg",
       program: "Mass Communication",
@@ -61,6 +66,7 @@ export const scholarsData = [
     },
     {
       id: "sch-006",
+      firstName: "Micheal",
       name: "Obasi Micheal Ebubechukwu",
       image: "images/Obasi_Micheal_Ebubechukwu.jpeg",
       program: "Philosophy",
@@ -73,6 +79,7 @@ export const scholarsData = [
     },
     {
       id: "sch-007",
+      firstName: "Saheed",
       name: "Oyewale Saheed Olamilekan",
       image: "images/Oyewale_Saheed_Olamilekan.jpeg",
       program: "Medicine and Surgery",
@@ -85,6 +92,7 @@ export const scholarsData = [
     },
     {
       id: "sch-008",
+      firstName: "David",
       name: "Olukare David",
       image: "images/OLUKARE_DAVID.jpeg",
       program: "Computer Science (Education)",
@@ -97,6 +105,7 @@ export const scholarsData = [
     },
     {
       id: "sch-009",
+      firstName: "Stephen",
       name: "Anyanwu Stephen Somtochukwu",
       image: "images/stephen_somtochukwu.jpeg",
       program: "Computer and Robotics Education",

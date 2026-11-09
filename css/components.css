@@ -418,142 +418,24 @@
   color: var(--secondary-color);
 }
 
-/* Keep anchored sections (e.g. about.html#governance) clear of the sticky header */
+/* Narrow desktops/tablets: keep the full menu and the theme toggle on one line */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .nav-links {
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .nav-links .btn.donate_btn {
+    padding: 0.45rem 0.8rem !important;
+  }
+}
+
+/* Keep anchored sections (e.g. governance.html#leadership) clear of the sticky header */
 .section[id] {
   scroll-margin-top: 110px;
-}
-
-/* About Us dropdown (built by js/navigation.js) */
-.nav-links .nav-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-}
-
-.nav-dropdown-toggle {
-  background: none;
-  border: 0;
-  padding: 0.25rem;
-  color: var(--text-main);
-  font-size: 0.75rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.nav-dropdown-toggle span {
-  display: inline-block;
-  transition: transform var(--transition-normal);
-}
-
-.nav-dropdown.open .nav-dropdown-toggle span {
-  transform: rotate(180deg);
-}
-
-.nav-links .nav-submenu {
-  position: absolute;
-  top: calc(100% + 0.6rem);
-  left: -1rem;
-  min-width: 190px;
-  margin: 0;
-  padding: 0.5rem 0;
-  list-style: none;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity var(--transition-normal), transform var(--transition-normal), visibility var(--transition-normal);
-  z-index: 1001;
-}
-
-/* Invisible bridge so the menu stays open while the pointer moves down to it */
-.nav-links .nav-submenu::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -0.6rem;
-  height: 0.6rem;
-}
-
-.nav-links .nav-dropdown.open .nav-submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-}
-
-@media (hover: hover) and (min-width: 769px) {
-  .nav-links .nav-dropdown:hover .nav-submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .nav-dropdown:hover .nav-dropdown-toggle span {
-    transform: rotate(180deg);
-  }
-}
-
-.nav-links .nav-submenu a {
-  display: block;
-  padding: 0.55rem 1.1rem;
-}
-
-.nav-links .nav-submenu a:not(.btn)::after {
-  display: none;
-}
-
-.nav-links .nav-submenu a:hover {
-  background: var(--bg-subtle);
-}
-
-@media (max-width: 768px) {
-  .nav-links .nav-dropdown {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
-  }
-
-  .nav-dropdown-toggle {
-    color: var(--text-light);
-    font-size: 1rem;
-    padding: 0.65rem 0.75rem;
-  }
-
-  .nav-links .nav-submenu {
-    position: static;
-    display: none;
-    width: 100%;
-    min-width: 0;
-    padding: 0 0 0.25rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 0;
-    border-radius: var(--radius-md);
-    box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .nav-links .nav-submenu::before {
-    display: none;
-  }
-
-  .nav-links .nav-dropdown.open .nav-submenu {
-    display: block;
-  }
-
-  .nav-links .nav-submenu li a {
-    font-size: 1rem;
-    padding: 0.55rem 0.5rem;
-  }
-
-  .nav-links .nav-submenu a:hover {
-    background: transparent;
-  }
 }
 
 .navbar-actions {
@@ -735,31 +617,35 @@
   position: absolute;
   inset: 0;
 
+  /* Clear at the top so the photo stays bright; darker only behind the text (bottom left) */
   background:
     linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0.55) 100%
+    ),
+    linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.75) 0%,
-      rgba(0, 0, 0, 0.50) 45%,
-      rgba(0, 0, 0, 0.15) 100%
+      rgba(0, 0, 0, 0.30) 0%,
+      rgba(0, 0, 0, 0) 60%
     );
 
   z-index: 1;
 }
 
 
-/* Text/content */
+/* Text/content — sits at the bottom of each slide, above the dots */
 
 .hero-slide-content {
   position: absolute;
 
-  top: 50%;
+  bottom: 55px;
   left: 8%;
 
-  transform: translateY(-50%);
-
-  width: min(650px, 80%);
+  width: min(780px, 84%);
 
   color: var(--text-light);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 
   z-index: 3;
 }
@@ -796,25 +682,26 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-shadow: none;
 }
 
 
 /* Hero heading */
 
 .hero-slide-content h1 {
-  margin: 0 0 1.25rem;
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
   line-height: 1.1;
   font-weight: 800;
   color: #ffffff;
-  max-width: 700px;
+  max-width: 780px;
 }
 
 
 /* Hero paragraph */
 
 .hero-slide-content p {
-  margin: 0 0 1.75rem;
+  margin: 0 0 1.4rem;
   max-width: 620px;
   font-size: 1.15rem;
   line-height: 1.7;
@@ -966,7 +853,7 @@
 
 
   .hero-slide-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
 
@@ -1013,19 +900,19 @@
   .hero-slide-overlay {
     background:
       linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.72),
-        rgba(0, 0, 0, 0.55)
+        180deg,
+        rgba(0, 0, 0, 0.10) 0%,
+        rgba(0, 0, 0, 0.30) 40%,
+        rgba(0, 0, 0, 0.72) 100%
       );
   }
 
 
   .hero-slide-content {
-    top: 50%;
+    bottom: 45px;
     left: 8%;
     width: 84%;
     text-align: center;
-    transform: translateY(-50%);
   }
 
 
@@ -1063,6 +950,7 @@
 
 
   .hero-slider-btn {
+    top: 30%;
     width: 40px;
     height: 40px;
     font-size: 1.15rem;
@@ -1142,7 +1030,7 @@
     width: 100%;
     min-height: 520px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     overflow: hidden;
     background-color: var(--primary-color);
@@ -1162,31 +1050,32 @@
 }
 
 
-/* Dark Overlay */
+/* Overlay — clear at the top so the photo stays bright, darker only behind the text at the bottom */
 
 .about-hero-overlay {
     position: absolute;
     inset: 0;
     background:
         linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.78) 0%,
-            rgba(0, 0, 0, 0.60) 50%,
-            rgba(0, 0, 0, 0.40) 100%
+            180deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.20) 45%,
+            rgba(0, 0, 0, 0.70) 100%
         );
     z-index: 1;
 }
 
 
-/* Content */
+/* Content — sits at the bottom of the banner */
 
 .about-hero-content {
     position: relative;
     z-index: 2;
     max-width: 900px;
-    padding: 5rem 1.5rem;
+    padding: 7rem 1.5rem 3.5rem;
     text-align: center;
     color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 
@@ -1202,6 +1091,7 @@
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    text-shadow: none;
 }
 
 
@@ -1254,7 +1144,7 @@
 
 
     .about-hero-content {
-        padding: 4rem 1.5rem;
+        padding: 6rem 1.5rem 3rem;
     }
 
 
@@ -1315,14 +1205,16 @@
     .about-hero-overlay {
         background:
             linear-gradient(
-                rgba(0, 0, 0, 0.72),
-                rgba(0, 0, 0, 0.72)
+                180deg,
+                rgba(0, 0, 0, 0.10) 0%,
+                rgba(0, 0, 0, 0.30) 40%,
+                rgba(0, 0, 0, 0.75) 100%
             );
     }
 
 
     .about-hero-content {
-        padding: 3.5rem 1.2rem;
+        padding: 6rem 1.2rem 2.5rem;
     }
 
 

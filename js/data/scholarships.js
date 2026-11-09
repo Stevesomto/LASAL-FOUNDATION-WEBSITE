@@ -7,7 +7,7 @@ export const scholarshipsData = [
       id: "stem-excellence-2026",
       title: "STEM Excellence Scholarship",
       category: "Undergraduate",
-      amount: "₦250,000 / year",
+      benefits: ["Tuition fees", "Learning materials", "Accommodation", "Monthly stipend"],
       status: "closed",
       deadline: "October 15, 2026",
       description: "Full tuition assistance and dedicated mentorship for high-achieving undergraduate students pursuing STEM degrees.",
@@ -17,7 +17,7 @@ export const scholarshipsData = [
     //   id: "community-leadership-award",
     //   title: "Community Leadership Award",
     //   category: "All Levels",
-    //   amount: "₦300,000 one-time",
+    //   benefits: ["Tuition fees", "Monthly stipend"],
     //   status: "open",
     //   deadline: "December 15, 2026",
     //   description: "Recognizing and funding students who demonstrate exceptional civic engagement alongside academic excellence.",
@@ -33,4 +33,11 @@ export function isScholarshipOpen(scholarship) {
 
 export function deadlineText(scholarship) {
   return isScholarshipOpen(scholarship) ? scholarship.deadline : CLOSED_LABEL;
+}
+
+/** "Tuition fees, learning materials, accommodation and monthly stipend" */
+export function benefitsText(scholarship) {
+  const items = (scholarship.benefits || []).map((b, i) => (i === 0 ? b : b.toLowerCase()));
+  if (items.length < 2) return items.join('');
+  return `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
 }

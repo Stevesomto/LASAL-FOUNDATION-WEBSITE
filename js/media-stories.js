@@ -1,21 +1,8 @@
 import { mediaStoriesData } from './data/media-stories.js';
 import { scholarVideos, youtubeEmbedSrc, youtubeThumbnail } from './data/scholar-videos.js';
 
-export function renderMediaStories() {
-  const videoGrid = document.getElementById('student-video-grid');
-  const photoGrid = document.getElementById('student-photo-text-grid');
-  if (!videoGrid && !photoGrid) return;
-
-  if (videoGrid) {
-    if (scholarVideos.length === 0) {
-      videoGrid.innerHTML = `
-        <p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 2rem 0;">
-          Video stories from scholars will appear here.
-        </p>`;
-    } else {
-      videoGrid.innerHTML = scholarVideos
-        .map(
-          (v) => `
+function videoCard(v) {
+  return `
         <article class="card media-story-card no-reveal">
           <div class="media-video-wrap${v.format === 'short' ? ' media-video-wrap--short' : ' media-video-wrap--standard'}">
             <button type="button" class="video-facade" data-video-id="${v.videoId}" aria-label="Play ${v.title}">
@@ -26,14 +13,38 @@ export function renderMediaStories() {
           </div>
           <div class="card-body media-video-card-caption">
             <span class="badge badge-teal">Video</span>
-            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-top: var(--spacing-sm);">Presented by LASAL Foundation. Tap play to watch.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-top: var(--spacing-sm);">Tap play to watch.</p>
           </div>
-        </article>`
-        )
-        .join('');
-      bindVideoFacades(videoGrid);
-    }
+        </article>`;
+}
+
+function renderVideoGrid(grid, videos, emptyText) {
+  if (!grid) return;
+  if (videos.length === 0) {
+    grid.innerHTML = `
+        <p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); padding: 2rem 0;">${emptyText}</p>`;
+    return;
   }
+  grid.innerHTML = videos.map(videoCard).join('');
+  bindVideoFacades(grid);
+}
+
+export function renderMediaStories() {
+  const videoGrid = document.getElementById('student-video-grid');
+  const parentVideoGrid = document.getElementById('parent-video-grid');
+  const photoGrid = document.getElementById('student-photo-text-grid');
+  if (!videoGrid && !parentVideoGrid && !photoGrid) return;
+
+  renderVideoGrid(
+    videoGrid,
+    scholarVideos.filter((v) => v.group !== 'parent'),
+    'Video stories from scholars and alumni will appear here.'
+  );
+  renderVideoGrid(
+    parentVideoGrid,
+    scholarVideos.filter((v) => v.group === 'parent'),
+    'Testimonies from parents will appear here.'
+  );
 
   if (photoGrid) {
     photoGrid.innerHTML = mediaStoriesData

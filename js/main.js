@@ -4,7 +4,7 @@ import { initSiteForms } from './forms.js';
 import { initSiteContact } from './site-contact.js';
 import { initMotion, refreshScrollReveal } from './motion.js';
 import { initInteractive } from './interactive.js';
-import { scholarshipsData, isScholarshipOpen, deadlineText } from './data/scholarships.js';
+import { scholarshipsData, isScholarshipOpen, deadlineText, benefitsText } from './data/scholarships.js';
 import { storiesData } from './data/stories.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,9 +32,9 @@ function renderFeaturedScholarships() {
         <h3 style="margin: var(--spacing-sm) 0; font-size: 1.25rem; color: var(--primary-color);">${s.title}</h3>
         <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: var(--spacing-md);">${s.description}</p>
         ${isScholarshipOpen(s) ? '' : `<p style="color: var(--secondary-color); font-size: 0.85rem; font-weight: 600; margin-bottom: var(--spacing-sm);">${deadlineText(s)}</p>`}
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600; color: var(--secondary-color);">
-          <span>Award: ${s.amount}</span>
-          <a href="scholarship-details.html?id=${s.id}" class="btn btn-outline1" style="padding: 0.4rem 1rem; font-size: 0.85rem;">View Details</a>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-md); font-size: 0.9rem; font-weight: 600; color: var(--secondary-color);">
+          <span>Benefits: ${benefitsText(s)}</span>
+          <a href="scholarship-details.html?id=${s.id}" class="btn btn-outline1" style="padding: 0.4rem 1rem; font-size: 0.85rem; flex-shrink: 0;">View Details</a>
         </div>
       </div>
     </div>
