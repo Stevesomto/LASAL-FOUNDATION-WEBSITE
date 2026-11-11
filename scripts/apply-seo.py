@@ -71,7 +71,7 @@ PAGES = {
     "contact.html": {
         "title": "Contact Us | LASAL Foundation",
         "description": "Contact LASAL Foundation in Lagos for scholarship inquiries, partnerships, and donations. Phone, email, and message form.",
-        "keywords": "contact LASAL Foundation, scholarship inquiry, Lekki Lagos office",
+        "keywords": "contact LASAL Foundation, scholarship inquiry, Oniru Lagos office",
         "path": "/contact.html",
     },
     "donate.html": {
@@ -131,8 +131,10 @@ def build_seo_block(page: dict) -> str:
             '    "telephone": "+234-813-552-9645",\n'
             '    "address": {\n'
             '      "@type": "PostalAddress",\n'
-            '      "streetAddress": "Suite 3, Canaan Plaza, Plot 2 Block 105 Lekki Phase 1",\n'
+            '      "streetAddress": "A1, O2 Towers, Simeon Akinlonu Street, Oniru Estate",\n'
+            '      "postOfficeBoxNumber": "73965",\n'
             '      "addressLocality": "Lagos",\n'
+            '      "addressRegion": "Lagos State",\n'
             '      "addressCountry": "NG"\n'
             "    },\n"
             '    "sameAs": []\n'

@@ -189,7 +189,7 @@ All animations are disabled for visitors who have **reduced motion** turned on i
 - [ ] Photos and short bios for the Advisory Board (Chief Olaiya Orlando Ojo, Dr. Femi Oyetunji)
 - [ ] Approval of the drafted quotes for Adegoke Lukumon Bidemi and Disu Qazim Opeyemi; a real quote for Ojuade Ololade
 - [ ] First-person version of Abayomi Oyeleye's alumni quote (currently written about him, not by him)
-- [ ] Confirm the office address (Lekki Phase 1 vs Victoria Island)
+- [x] Office address updated to A1, O2 Towers, Simeon Akinlonu Street, Oniru Estate, PO Box 73965, Lagos State, Nigeria
 - [ ] Confirm the minimum CGPA (3.50 on a 5.0 scale) and the states count (impact counter says 13; the list names 14)
 - [ ] Beneficiary details from the Program Officer (figures now 60 = 32 alumni + 20 scholars + 8 onboarding; the old 27 male / 25 female split was removed because it no longer adds up)
 - [ ] Confirm first names used on Our Community where the name order is unclear: Joseph (Omotayo Joseph), Sylvia (Andrew Ulan Sylvia), Lukumon (Adegoke Lukumon Bidemi), Yusuff (Gbonjubola Yusuff Tunde), Oluwatoyin (Idowu Oluwatoyin Isaiah)
