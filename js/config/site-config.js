@@ -2,7 +2,7 @@
 export const WHATSAPP_NUMBER = '2348135529645';
 
 /** Shown in header, footer, and contact areas. */
-export const CONTACT_PHONES_DISPLAY = '0805 700 1924 · ';
+export const CONTACT_PHONES_DISPLAY = '0805 700 1924 · 0802 778 0305';
 
 export const SOCIAL_URLS = {
   facebook: 'https://www.facebook.com/lasalfoundation/',
@@ -46,11 +46,16 @@ export function formatNgn(amount) {
 /** Direct bank transfer (Donate page and WhatsApp donation messages). */
 export const DONATION_BANK = {
   accountName: 'The Lateef Ajibade Salami Foundation',
-  currency: 'NGN',
   transferNote:
     'Cheques may also be written in the Foundation’s account name. Use your full name as payment narration (e.g. Donation – Jane Doe).',
   accounts: [
-    { bankName: 'Ecobank plc', accountNumber: '0015051133' },
+    { bankName: 'Ecobank plc', accountNumber: '0015051133', currency: 'NGN' },
+    {
+      bankName: 'Ecobank',
+      accountNumber: '0010024059',
+      currency: 'USD',
+      label: 'Lasal USD Account',
+    },
   ],
 };
 
@@ -59,17 +64,16 @@ export const DONATION_BANK = {
 
 export function donationBankDetailsHtml() {
   const rows = DONATION_BANK.accounts
-    .map(
-      (a) =>
-        `<strong>${a.bankName}:</strong> ${a.accountNumber}`
-    )
+    .map((a) => {
+      const title = a.label || `${a.bankName} (${a.currency})`;
+      return `<strong>${title}:</strong> ${a.accountNumber} — ${a.bankName} (${a.currency})`;
+    })
     .join('<br>');
   return `
       <h4 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Bank transfer details</h4>
       <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: var(--spacing-sm);">
         <strong>Account name:</strong> ${DONATION_BANK.accountName}<br>
-        ${rows}<br>
-        <strong>Currency:</strong> ${DONATION_BANK.currency}
+        ${rows}
       </p>
       <p style="color: var(--text-muted); font-size: 0.9rem;">${DONATION_BANK.transferNote}</p>
     `;
@@ -77,7 +81,7 @@ export function donationBankDetailsHtml() {
 
 export function donationBankWhatsAppSummary() {
   const accts = DONATION_BANK.accounts
-    .map((a) => `${a.bankName} ${a.accountNumber}`)
+    .map((a) => `${a.label || a.bankName} ${a.accountNumber} (${a.currency})`)
     .join('; ');
   return `${DONATION_BANK.accountName} (${accts})`;
 }

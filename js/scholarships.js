@@ -102,7 +102,7 @@ function renderScholarshipDetails() {
       <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-muted); margin-bottom: var(--spacing-xl); line-height: 1.8;">
         <li>Official academic transcripts (minimum CGPA of 3.50 on a 5.0 scale).</li>
         <li>Two letters of recommendation (academic or professional).</li>
-        <li>Personal statement / essay (500–750 words) detailing career aspirations and community impact goals.</li>
+        <li>Personal statement / essay (300 words) detailing career aspirations and community impact goals.</li>
         <li>Proof of enrollment or admission letter from an accredited institution.</li>
       </ul>
 
@@ -116,8 +116,8 @@ function renderScholarshipDetails() {
 function closedNoticeCard() {
   return `
       <div class="card" style="padding: var(--spacing-xl); border-color: var(--secondary-color);">
-        <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Applications Are Currently Closed</h3>
-        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: var(--spacing-lg);">The application window for this scholarship has ended. The next intake will be announced soon. Check back here or contact us to be notified when applications reopen.</p>
+        <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Application Window Update</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: var(--spacing-lg);">Our annual scholarship application window is open between mid-August and ends at mid-September.</p>
         <a href="contact.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Contact Us</a>
       </div>`;
 }

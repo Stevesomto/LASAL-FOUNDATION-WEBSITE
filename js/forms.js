@@ -54,6 +54,12 @@ function initContactForm() {
 }
 
 function initDonationForm() {
+  const staticBank = document.getElementById('donation-bank-static');
+  if (staticBank && staticBank.dataset.filled !== 'true') {
+    staticBank.innerHTML = donationBankDetailsHtml();
+    staticBank.dataset.filled = 'true';
+  }
+
   const form = document.getElementById('donation-form');
   if (!form || form.dataset.lasalBound === 'true') return;
   form.dataset.lasalBound = 'true';
@@ -191,9 +197,6 @@ function initDonationForm() {
       updateDonationEquivalents();
     });
   });
-
-  const staticBank = document.getElementById('donation-bank-static');
-  if (staticBank) staticBank.innerHTML = donationBankDetailsHtml();
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();

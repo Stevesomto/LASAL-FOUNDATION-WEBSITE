@@ -18,8 +18,8 @@ function showApplicationsClosed(form) {
     notice.className = 'card';
     notice.style.cssText = 'padding: var(--spacing-xl); border-color: var(--secondary-color); text-align: center;';
     notice.innerHTML = `
-        <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Applications Are Currently Closed</h3>
-        <p style="color: var(--text-muted); margin-bottom: var(--spacing-lg);">There are no scholarships open for applications right now. The next intake will be announced soon. Contact us to be notified when applications reopen.</p>
+        <h3 style="color: var(--primary-color); margin-bottom: var(--spacing-sm);">Application Window Update</h3>
+        <p style="color: var(--text-muted); margin-bottom: var(--spacing-lg);">Our annual scholarship application window is open between mid-August and ends at mid-September.</p>
         <a href="contact.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Contact Us</a>`;
     form.replaceWith(notice);
     document.querySelector('.wizard-progress')?.remove();

@@ -211,7 +211,7 @@ function initHeroSlider() {
 
       nextSlide();
 
-    }, 5000);
+    }, 11000);
 
   }
 

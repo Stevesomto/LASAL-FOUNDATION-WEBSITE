@@ -21,7 +21,7 @@ export const scholarsData = [
       institution: "University of Lagos",
       level: "500 Level",
       location: "Lagos, Nigeria",
-      scholarship: "STEM Scholarship",
+      scholarship: "Excellence Scholarship",
       quote: "The steadfast support of the LASAL Foundation with my school fees since my second year has profoundly lifted a major financial burden, allowing me to pour my full focus into my medical education. Thank you LASAL FOUNDATION",
       status: "current"
     },
@@ -86,7 +86,7 @@ export const scholarsData = [
       institution: "University of Ibadan",
       level: "500 Level",
       location: "Lagos, Nigeria",
-      scholarship: "STEM Scholarship Award",
+      scholarship: "Excellence Scholarship Award",
       quote: "LASAL Foundation continuous support has been life-changing, making a profound difference in my academic journey and bringing my dreams within reach.",
       status: "current"
     },
@@ -99,7 +99,7 @@ export const scholarsData = [
       institution: "Lagos State University of Education",
       level: "200 Level",
       location: "Lagos, Nigeria",
-      scholarship: "STEM Scholarship Award",
+      scholarship: "Excellence Scholarship Award",
       quote: "I feel truly grateful to LASAL Foundation for its support and investment in my growth. The assistance has been a great relief and motivation to keep pushing towards my goals. I pray God continues to bless the foundation and everyone making this impact possible.",
       status: "current"
     },
@@ -112,7 +112,7 @@ export const scholarsData = [
       institution: "University of Nigeria, Nsukka",
       level: "300 Level",
       location: "Enugu, Nigeria",
-      scholarship: "STEM Scholarship Award",
+      scholarship: "Excellence Scholarship Award",
       quote: "Thank you so much LASAL FOUNDATION for this great opportunity.",
       status: "current"
     }

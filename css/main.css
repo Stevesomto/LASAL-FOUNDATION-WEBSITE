@@ -46,7 +46,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
-  --transition-normal: 0.2s ease-in-out;
+  --transition-normal: 0.4s ease-in-out;
 }
 
 /* Dark mode — toggled via html[data-theme="dark"] (see js/theme.js) */
@@ -297,11 +297,9 @@ body.mobile-nav-open {
   }
 
   .mobile-menu-toggle {
-    display: block !important;
-    background: transparent;
-    border: none;
-    color: var(--primary-color);
-    font-size: 1.75rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 1003;
     padding: 0;

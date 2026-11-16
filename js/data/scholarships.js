@@ -5,12 +5,12 @@
 export const scholarshipsData = [
     {
       id: "stem-excellence-2026",
-      title: "STEM Excellence Scholarship",
+      title: "Excellence Scholarship",
       category: "Undergraduate",
       benefits: ["Tuition fees", "Learning materials", "Accommodation", "Monthly stipend"],
       status: "closed",
       deadline: "October 15, 2026",
-      description: "Full tuition assistance and dedicated mentorship for high-achieving undergraduate students pursuing STEM degrees.",
+      description: "Full tuition assistance and dedicated mentorship for high-achieving undergraduate students.",
       eligibility: "Open to first and second-year university students with a minimum CGPA of 3.50 on a 5.0 scale."
     },
     // {

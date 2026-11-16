@@ -1,4 +1,4 @@
-import { leadersData } from './data/leaders.js';
+import { leadersData } from './data/leaders.js?v=2';
 
 function esc(value) {
   return String(value ?? '')
@@ -42,5 +42,6 @@ function renderGroup(gridId, group) {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderGroup('governance-grid', 'governance');
+  renderGroup('advisory-grid', 'advisory');
   renderGroup('leadership-grid', 'leadership');
 });

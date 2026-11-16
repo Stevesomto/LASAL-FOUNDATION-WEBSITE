@@ -30,7 +30,8 @@ function initHomePreloader() {
 
   document.body.classList.add('is-preloading');
 
-  const MIN_DISPLAY_MS = 900;
+  // Slow assemble: pieces ~2.4s + delays ~1.65s + settle/hold
+  const MIN_DISPLAY_MS = 4800;
   const start = Date.now();
 
   function hidePreloader() {
@@ -40,7 +41,7 @@ function initHomePreloader() {
     window.setTimeout(() => {
       preloader.classList.add('site-preloader--hide');
       document.body.classList.remove('is-preloading');
-      window.setTimeout(() => preloader.remove(), 650);
+      window.setTimeout(() => preloader.remove(), 750);
     }, wait);
   }
 
@@ -48,7 +49,7 @@ function initHomePreloader() {
     hidePreloader();
   } else {
     window.addEventListener('load', hidePreloader, { once: true });
-    window.setTimeout(hidePreloader, 4000);
+    window.setTimeout(hidePreloader, 8000);
   }
 }
 
@@ -93,7 +94,7 @@ function markRevealTargets(root = document) {
     children.forEach((child, index) => {
       if (child.closest('.hero-slider')) return;
       if (!child.classList.contains('reveal')) child.classList.add('reveal');
-      child.style.setProperty('--reveal-delay', `${Math.min(index * 90, 450)}ms`);
+      child.style.setProperty('--reveal-delay', `${Math.min(index * 150, 750)}ms`);
     });
   });
 }

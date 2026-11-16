@@ -31,8 +31,8 @@
   <meta name="twitter:image" content="https://lasalfoundation.org/images/LOGO.jpg">
   
   <!--STYLESHEETS-->
-  <link rel="stylesheet" href="css/main.css?v=2">
-  <link rel="stylesheet" href="css/components.css?v=16">
+  <link rel="stylesheet" href="css/main.css?v=3">
+  <link rel="stylesheet" href="css/components.css?v=17">
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="shortcut icon" href="images/LOGO.jpg" type="image/x-icon">
 
@@ -95,7 +95,7 @@
     <!-- Hero Section -->
 
     <section class="about-hero">
-      <img src="images/hero-ghana-mba-graduate-friend.jpg" alt="A smiling graduate with a friend celebrating his graduation" class="about-hero-image" style="object-position: center 12%;">
+      <img src="images/giving-hand.svg" alt="A hand offering support" class="about-hero-image" style="object-position: center center;">
   
       <div class="about-hero-overlay"></div>
       <div class="container about-hero-content">
@@ -130,42 +130,8 @@
           <a href="contact.html" class="partner-deck-card partner-deck-card--mentor">MENTORSHIP:<span>Sign Up as a Mentor</span></a>
           <a href="contact.html" class="partner-deck-card partner-deck-card--intern">INTERNSHIPS:<span>Offer Internship</span></a>
           <a href="contact.html" class="partner-deck-card partner-deck-card--community">COMMUNITY PROJECTS:<span>Support Projects by LASAL Beneficiaries</span></a>
-          <a href="contact.html" class="partner-deck-card partner-deck-card--strategic">STRATEGIC PARTNERSHIPS</a>
+          <a href="contact.html" class="partner-deck-card partner-deck-card--strategic">STRATEGIC PARTNERSHIPS<span>as feeder institution and other strategic supports</span></a>
         </div>
-      </div>
-    </section>
-
-    <!-- LASAL Impact Summit -->
-    <section class="section bg-subtle">
-      <div class="container split-deck-grid">
-        <div>
-          <h2 class="deck-section-title">LASAL Impact Summit</h2>
-          <div class="deck-title-rule"></div>
-          <p style="color: var(--text-muted); line-height: 1.8;"><strong>Education as a Social Mobility</strong> — September 2026 · Lagos, Nigeria</p>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-top: var(--spacing-md);">The LASAL Impact Summit marks 10 years of sustained intervention in supporting students through financial barriers to education and expanding access to tertiary opportunities. It is convened to reflect on the Foundation's impact, celebrate beneficiaries and alumni, and strengthen connections across its growing community of scholars and partners. Beyond reflection, the summit serves as a strategic platform to consolidate lessons, deepen engagement with stakeholders across Nigeria and the diaspora, and mobilize support for the next phase of scale, sustainability, and greater educational impact.</p>
-          <p style="margin-top: var(--spacing-md);"><a href="contact.html" class="btn btn-primary" style="background-color: var(--secondary-color);">Register interest</a></p>
-        </div>
-        <div>
-          <img src="images/deck/impact-summit.jpg" alt="LASAL Impact Summit 2026" loading="lazy" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); width: 100%;">
-        </div>
-      </div>
-    </section>
-
-    <!-- Storytelling for Impact -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Storytelling for Impact</h2>
-          <p>Sharing alumni journeys, data, and media that inspire partners and the public.</p>
-        </div>
-        <div class="storytelling-pill-grid">
-          <div class="storytelling-pill"><div class="pill-icon">📊</div><p>Alumni Data Updates</p></div>
-          <div class="storytelling-pill"><div class="pill-icon">🎬</div><p>Documentaries</p></div>
-          <div class="storytelling-pill"><div class="pill-icon">💡</div><p>Alumni Spotlights</p></div>
-          <div class="storytelling-pill"><div class="pill-icon">📈</div><p>Impact Reports</p></div>
-          <div class="storytelling-pill"><div class="pill-icon">💬</div><p>Social Media Campaigns</p></div>
-        </div>
-        <p style="text-align: center; margin-top: var(--spacing-xl);"><a href="stories.html#photos-videos" class="btn btn-outline1">Photos &amp; video stories</a></p>
       </div>
     </section>
 
@@ -230,63 +196,11 @@
     <div class="container" style="max-width: 700px;">
       <div class="section-header" style="text-align: center; margin-bottom: var(--spacing-xl);">
         <span class="badge badge-teal" style="margin-bottom: var(--spacing-sm);">Make a Difference</span>
-        <h2>Support Our Scholars</h2>
+        <h2>Support Our Cause</h2>
         <p>100% of direct donations go towards student scholarships, tuition grants, and educational resources.</p>
       </div>
 
-      <div id="donation-bank-static" class="card" style="padding: var(--spacing-xl); margin-bottom: var(--spacing-lg);"></div>
-
-      <div class="card" style="padding: var(--spacing-xl);">
-        <form id="donation-form">
-          <div class="form-group" style="margin-bottom: var(--spacing-lg);">
-            <label class="form-label">Select Donation Amount</label>
-            <div class="donation-amount-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-sm); margin-top: var(--spacing-xs);">
-              <button type="button" class="btn btn-outline1 donation-amount-btn" data-donation-amount="25" style="padding: 0.75rem;">$25</button>
-              <button type="button" class="btn btn-outline1 donation-amount-btn" data-donation-amount="50" style="padding: 0.75rem;">$50</button>
-              <button type="button" class="btn btn-primary donation-amount-btn" data-donation-amount="100" style="padding: 0.75rem; background-color: var(--secondary-color);">$100</button>
-              <button type="button" class="btn btn-outline1 donation-amount-btn" data-donation-amount="500" style="padding: 0.75rem;">$500</button>
-            </div>
-            <p id="donation-selected-equivalent" class="donation-equivalent-line" aria-live="polite"></p>
-          </div>
-
-          <!-- Card / PayPal (restore when re-enabling other payment methods)
-          <p id="paystack-note" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--spacing-md);">
-            Card payments via Paystack can be enabled by adding your public key in <code>js/config/site-config.js</code>. Until then, card and PayPal requests are completed through WhatsApp with our team.
-          </p>
-          -->
-
-          <div class="form-group" style="margin-bottom: var(--spacing-md);">
-            <span class="form-label">Or custom amount</span>
-            <div class="donation-currency-toggle" role="group" aria-label="Donation currency">
-              <label class="donation-currency-option">
-                <input type="radio" name="donation-currency" id="donation-currency-usd" value="usd" checked>
-                USD ($)
-              </label>
-              <label class="donation-currency-option">
-                <input type="radio" name="donation-currency" id="donation-currency-ngn" value="ngn">
-                Naira (₦)
-              </label>
-            </div>
-            <label class="form-label" for="custom-amount" id="custom-amount-label">Custom amount (USD)</label>
-            <input type="number" id="custom-amount" class="form-control" placeholder="100" min="1" step="any">
-            <p id="donation-custom-equivalent" class="donation-equivalent-line" aria-live="polite"></p>
-            <p id="donation-rate-note" class="donation-rate-note"></p>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
-            <div class="form-group">
-              <label class="form-label" for="donor-name">Full Name *</label>
-              <input type="text" id="donor-name" class="form-control" required placeholder="Fullname">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="donor-email">Email Address *</label>
-              <input type="email" id="donor-email" class="form-control" required placeholder="Email address">
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-outline complete" style="background-color: var(--primary-color);  width: 100%; padding: 0.85rem; font-size: 1.05rem;">Complete Secure Donation</button>
-        </form>
-      </div>
+      <div id="donation-bank-static" class="card" style="padding: var(--spacing-xl);"></div>
     </div>
     </section>
   </main>
@@ -321,9 +235,9 @@
         <div class="footer-col">
           <h3>Contact Us</h3>
           <ul>
-            <li><span>📍 A1, O2 Towers, <br> Simeon Akinlonu Street, <br> Oniru Estate, PO Box 73965, <br> Lagos State, Nigeria</span></li>
-            <li><span>📞 <span class="contact-phone-links"><a href="tel:+2348135529645">0805 700 1924</a> · <a href="tel:+2348027780305"></a></span></span></li>
-            <li><span>✉️ <a href="mailto:lasalfoundation06@gmail.com">lasalfoundation06@gmail.com</a></span></li>
+            <li><span><address> A1, O2 Towers, <br> Simeon Akinlonu Street, <br> Oniru Estate, PO Box 73965, <br> Lagos State, Nigeria</address></span></li>
+            <li><span><span class="contact-phone-links"><a href="tel:+2348135529645">0805 700 1924</a> · <a href="tel:+2348027780305">0802 778 0305</a></span></span></li>
+            <li><span><a href="mailto:lasalfoundation06@gmail.com">lasalfoundation06@gmail.com</a></span></li>
           </ul>
         </div>
       </div>

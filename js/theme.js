@@ -14,9 +14,19 @@ function updateToggleButton(btn, theme) {
   const isDark = theme === 'dark';
   btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   btn.setAttribute('title', isDark ? 'Light mode' : 'Dark mode');
-  btn.innerHTML = isDark
-    ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
-    : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+  btn.classList.toggle('is-dark', isDark);
+  // Neutral day/night switch (no crescent moon)
+  btn.innerHTML = `
+    <span class="theme-toggle-track" aria-hidden="true">
+      <span class="theme-toggle-icon theme-toggle-icon--day">
+        <i class="fa-solid fa-sun"></i>
+      </span>
+      <span class="theme-toggle-icon theme-toggle-icon--night">
+        <i class="fa-solid fa-star"></i>
+      </span>
+      <span class="theme-toggle-knob"></span>
+    </span>
+  `;
 }
 
 /** Inserts header toggle if missing; syncs icon with current theme. */

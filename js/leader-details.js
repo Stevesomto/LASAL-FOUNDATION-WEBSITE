@@ -1,4 +1,4 @@
-import { leadersData } from './data/leaders.js';
+import { leadersData } from './data/leaders.js?v=2';
 import { refreshScrollReveal } from './motion.js';
 import { updatePageMeta } from './seo-utils.js';
 
@@ -34,9 +34,11 @@ function renderLeaderDetail() {
     return;
   }
 
-  const section = leader.group === 'governance'
-    ? { href: 'governance.html#governance', label: 'Governance' }
-    : { href: 'governance.html#leadership', label: 'Leadership' };
+  const section = leader.group === 'advisory'
+    ? { href: 'governance.html#advisory-board', label: 'Advisory Board' }
+    : leader.group === 'governance'
+      ? { href: 'governance.html#governance', label: 'Governance' }
+      : { href: 'governance.html#leadership', label: 'Leadership' };
   const backLink = document.getElementById('leader-back-link');
   if (backLink) {
     backLink.href = section.href;
