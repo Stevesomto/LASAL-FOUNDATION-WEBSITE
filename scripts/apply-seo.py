@@ -16,7 +16,7 @@ PAGES = {
     },
     "about.html": {
         "title": "About Us | LASAL Foundation",
-        "description": "Mission, vision, and leadership of LASAL Foundation—supporting indigent Nigerian students through scholarships and mentorship since 2016.",
+        "description": "Mission, vision, and leadership of LASAL Foundation - supporting indigent Nigerian students through scholarships and mentorship since 2016.",
         "keywords": "about LASAL Foundation, Lateef Ajibade Salami, education NGO Nigeria, mission vision",
         "path": "/about.html",
     },
@@ -40,7 +40,7 @@ PAGES = {
     },
     "community.html": {
         "title": "Our Community | LASAL Foundation",
-        "description": "Meet LASAL Foundation scholars and alumni—current students and graduates making impact in Nigeria and worldwide.",
+        "description": "Meet LASAL Foundation scholars and alumni - current students and graduates making impact in Nigeria and worldwide.",
         "keywords": "LASAL scholars, alumni network, beneficiary stories, student community",
         "path": "/community.html",
     },
@@ -58,7 +58,7 @@ PAGES = {
     },
     "story-details.html": {
         "title": "Scholar Story | LASAL Foundation",
-        "description": "Full success story from a LASAL Foundation scholar or alum—education, mentorship, and career impact.",
+        "description": "Full success story from a LASAL Foundation scholar or alum - education, mentorship, and career impact.",
         "keywords": "LASAL story, scholar profile, alumni feature",
         "path": "/story-details.html",
     },
@@ -76,7 +76,7 @@ PAGES = {
     },
     "donate.html": {
         "title": "Donate | LASAL Foundation",
-        "description": "Support LASAL Foundation scholars with a secure donation. Bank transfer or card—100% directed to education and student support.",
+        "description": "Support LASAL Foundation scholars with a secure donation. Bank transfer or card - 100% directed to education and student support.",
         "keywords": "donate LASAL, scholarship donation Nigeria, support students, charity giving",
         "path": "/donate.html",
     },
@@ -127,8 +127,8 @@ def build_seo_block(page: dict) -> str:
             f'    "url": "{ORIGIN}/",\n'
             f'    "logo": "{OG_IMAGE}",\n'
             '    "description": "Promoting social mobility through scholarships and mentorship for indigent students in Nigeria.",\n'
-            '    "email": "lasalfoundation06@gmail.com",\n'
-            '    "telephone": "+234-813-552-9645",\n'
+            '    "email": "info@lasalfoundation.org",\n'
+            '    "telephone": "+234-805-700-1924 · +234-802-778-0305",",\n'
             '    "address": {\n'
             '      "@type": "PostalAddress",\n'
             '      "streetAddress": "A1, O2 Towers, Simeon Akinlonu Street, Oniru Estate",\n'

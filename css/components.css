@@ -527,8 +527,8 @@
   opacity: 0.35;
 }
 
-.theme-toggle.is-dark .theme-toggle-icon--night {
-  opacity: 0.95;
+  .theme-toggle.is-dark .theme-toggle-icon--night {
+    opacity: 0.95;
 }
 
 .mobile-menu-toggle {
@@ -1220,7 +1220,7 @@
     text-shadow: none;
 }
 
-/* Community collage: wide multi-passport banner — show full rows, crop sides if needed */
+/* Community collage: wide multi-passport banner  -  show full rows, crop sides if needed */
 .about-hero--community {
     min-height: 480px;
 }
@@ -1231,7 +1231,7 @@
 }
 
 
-/* Overlay — clear at the top so the photo stays bright, darker only behind the text at the bottom */
+/* Overlay  -  clear at the top so the photo stays bright, darker only behind the text at the bottom */
 
 .about-hero-overlay {
     position: absolute;
@@ -1245,7 +1245,7 @@
 }
 
 
-/* Content — sits at the bottom of the banner */
+/* Content  -  sits at the bottom of the banner */
 
 .about-hero-content {
     position: relative;
@@ -1477,12 +1477,12 @@
   border: 0;
 }
 
-/* 9:16 — full card width (same as Shorts on the site) */
+/* 9:16  -  full card width (same as Shorts on the site) */
 .media-video-wrap--short {
   padding-bottom: 177.78%;
 }
 
-/* 16:9 — landscape clips */
+/* 16:9  -  landscape clips */
 .media-video-wrap--standard {
   padding-bottom: 56.25%;
 }
@@ -1602,7 +1602,7 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
-/* White card — always dark text (never inherit section/body light theme colors) */
+/* White card  -  always dark text (never inherit section/body light theme colors) */
 .challenge-highlight-box {
   width: 100%;
   max-width: 920px;
@@ -2478,7 +2478,7 @@ body.is-preloading {
   }
 }
 
-/* Donate page — USD / NGN equivalents */
+/* Donate page  -  USD / NGN equivalents */
 .donation-amount-btn {
   flex-direction: column;
   line-height: 1.25;

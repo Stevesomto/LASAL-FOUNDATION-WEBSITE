@@ -8,7 +8,7 @@ export const storiesData = [
     image: "images/leadership/gbonjubola-yusuff-tunde.jpeg",
     imagePosition: "center 30%",
     excerpt:
-      "Among the Foundation’s first beneficiaries at the University of Ibadan—LASAL became a second family through scholarship, mentorship, and support that continues long after graduation.",
+      "Among the Foundation’s first beneficiaries at the University of Ibadan - LASAL became a second family through scholarship, mentorship, and support that continues long after graduation.",
     date: "LASAL Alumnus",
     body: `
       <p>I came to know about the LASAL Foundation during my 200-level studies at the University of Ibadan through the Youth Leader of my town. I applied for the scholarship and was privileged to be among the Foundation’s first set of beneficiaries.</p>
@@ -29,7 +29,7 @@ export const storiesData = [
     category: "Alumni Review",
     image: "images/leadership/anthonia-abah-headshot.jpeg",
     excerpt:
-      "From navigating loss and a difficult campus network in year two at FUT Minna to graduating with Second Class Upper (~80% CGPA)—and mentoring over 3,000 students along the way.",
+      "From navigating loss and a difficult campus network in year two at FUT Minna to graduating with Second Class Upper (~80% CGPA) - and mentoring over 3,000 students along the way.",
     date: "LASAL Alumnus",
     body: `
       <p>I am Anthonia Abah, a Chemical Engineering graduate from the Federal University of Technology Minna, Niger State, Nigeria.</p>

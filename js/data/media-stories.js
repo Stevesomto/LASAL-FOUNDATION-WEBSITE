@@ -1,4 +1,4 @@
-/** Photo / video highlights on Stories page — set videoUrl to a YouTube embed when available. */
+/** Photo / video highlights on Stories page  -  set videoUrl to a YouTube embed when available. */
 export const mediaStoriesData = [
   {
     id: 'media-gbonjubola',

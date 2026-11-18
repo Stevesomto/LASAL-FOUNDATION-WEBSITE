@@ -1,4 +1,4 @@
-/** Photos & Videos merged into Stories — drop legacy nav item if old HTML still has it. */
+/** Photos & Videos merged into Stories  -  drop legacy nav item if old HTML still has it. */
 function removeLegacyPhotosVideosNav() {
   document.querySelectorAll('.nav-links li').forEach((li) => {
     const link = li.querySelector('a');

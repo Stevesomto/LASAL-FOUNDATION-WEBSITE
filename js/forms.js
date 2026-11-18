@@ -210,7 +210,7 @@ function initDonationForm() {
     }
     const { usd, ngn } = amounts;
 
-    // Card (Paystack) — restore with PAYSTACK_PUBLIC_KEY import and donate.html Paystack script
+    // Card (Paystack)  -  restore with PAYSTACK_PUBLIC_KEY import and donate.html Paystack script
     // if (method === 'card' && PAYSTACK_PUBLIC_KEY) {
     //   startPaystackDonation({ amount, email, name, form });
     //   return;

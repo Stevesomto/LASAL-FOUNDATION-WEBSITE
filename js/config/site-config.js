@@ -1,4 +1,4 @@
-/** Site-wide settings — phones, social, and donation bank details. */
+/** Site-wide settings  -  phones, social, and donation bank details. */
 export const WHATSAPP_NUMBER = '2348135529645';
 
 /** Shown in header, footer, and contact areas. */
@@ -66,7 +66,7 @@ export function donationBankDetailsHtml() {
   const rows = DONATION_BANK.accounts
     .map((a) => {
       const title = a.label || `${a.bankName} (${a.currency})`;
-      return `<strong>${title}:</strong> ${a.accountNumber} — ${a.bankName} (${a.currency})`;
+      return `<strong>${title}:</strong> ${a.accountNumber}  -  ${a.bankName} (${a.currency})`;
     })
     .join('<br>');
   return `

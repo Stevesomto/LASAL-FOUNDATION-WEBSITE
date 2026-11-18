@@ -49,7 +49,7 @@
   --transition-normal: 0.4s ease-in-out;
 }
 
-/* Dark mode — toggled via html[data-theme="dark"] (see js/theme.js) */
+/* Dark mode  -  toggled via html[data-theme="dark"] (see js/theme.js) */
 html[data-theme="dark"] {
   color-scheme: dark;
 
@@ -198,7 +198,7 @@ body.mobile-nav-open {
     min-height: 72px;
   }
 
-  /* Menu panel is position:fixed — keep <nav> out of the flex row so the logo stays left */
+  /* Menu panel is position:fixed  -  keep <nav> out of the flex row so the logo stays left */
   .navbar nav {
     position: absolute;
     width: 0;
@@ -211,7 +211,7 @@ body.mobile-nav-open {
     pointer-events: auto;
   }
 
-  /* Hidden until .active — fixed panel scrolls independently of the page */
+  /* Hidden until .active  -  fixed panel scrolls independently of the page */
   .nav-links {
     display: none !important;
     flex-direction: column;
@@ -264,7 +264,7 @@ body.mobile-nav-open {
     margin: var(--spacing-sm) auto 0;
   }
 
-  /* Current page — yellow on orange menu (desktop uses --secondary-color) */
+  /* Current page  -  yellow on orange menu (desktop uses --secondary-color) */
   .nav-links li a.active:not(.btn) {
     color: #fde047 !important;
     font-weight: 700;
